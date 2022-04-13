@@ -3,5 +3,6 @@
 
 #include "duplicatekeyexception.h"
 #include "keynotfoundexception.h"
+#include "valueconversionfailedexception.h"
 
 #endif // DATAEXCEPTIONS_H

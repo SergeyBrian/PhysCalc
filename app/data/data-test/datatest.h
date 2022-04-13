@@ -13,6 +13,7 @@ private slots:
     void testAddValue();
     void testDuplicateKeyException();
     void testKeyNotFoundException();
+    void testGetValue();
 
 public:
     explicit DataTest(QObject *parent = nullptr);

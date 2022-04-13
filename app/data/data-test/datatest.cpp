@@ -37,4 +37,15 @@ void DataTest::testKeyNotFoundException()
     delete storage;
 }
 
+void DataTest::testGetValue()
+{
+    DataStorage * storage = new DataStorage();
+
+    storage->addValue("v1", new QVariant(1));
+    QCOMPARE(storage->getValue("v1")->toInt(), 1);
+    QCOMPARE(storage->getValue<int>("v1"), 1);
+
+    delete storage;
+}
+
 QTEST_MAIN(DataTest)
