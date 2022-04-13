@@ -10,6 +10,8 @@ CONFIG += c++11
 
 include(ui/ui.pri)
 include(data/data.pri)
+include(table/table.pri)
+
 include(exceptions/exceptions.pri)
 
 SOURCES += \
