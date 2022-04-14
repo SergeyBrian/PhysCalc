@@ -6,7 +6,7 @@ DataStorage::DataStorage()
 
 }
 
-void DataStorage::addValue(std::string key, QVariant *value)
+void DataStorage::addValue(std::string key, Variable *value)
 {
     if (this->hasKey(key)) {
         throw DuplicateKeyException(this, key);
@@ -14,11 +14,9 @@ void DataStorage::addValue(std::string key, QVariant *value)
     this->values.insert({key, value});
 }
 
-QVariant * DataStorage::getValue(std::string key) {
-    if (!this->hasKey(key)) {
-        throw KeyNotFoundException(this, key);
-    }
-    return this->values[key];
+double DataStorage::operator[] (std::string key)
+{
+    return this->getValue<double>(key);
 }
 
 bool DataStorage::hasKey(std::string key)
