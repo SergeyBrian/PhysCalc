@@ -7,7 +7,7 @@ class CalculatorException
 {
 public:
     CalculatorException(Calculator * calculator);
-    std::string what();
+    QString what();
     Calculator * calculator;
 };
 

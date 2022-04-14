@@ -10,22 +10,22 @@ TableManager::~TableManager()
 
 }
 
-void TableManager::openTable(std::string tablename, std::string filename)
+void TableManager::openTable(QString tablename, QString filename)
 {
 
 }
 
-void TableManager::openTable(std::string tablename)
+void TableManager::openTable(QString tablename)
 {
 
 }
 
-void TableManager::closeTable(std::string tablename)
+void TableManager::closeTable(QString tablename)
 {
 
 }
 
-Table *TableManager::getTable(std::string tablename)
+Table *TableManager::getTable(QString tablename)
 {
     return nullptr;
 }

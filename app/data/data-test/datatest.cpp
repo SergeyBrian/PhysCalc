@@ -10,10 +10,12 @@ void DataTest::testAddValue() {
     storage->addValue("v1", 1, "test", "test");
     storage->addValue("v2", 4.5, "test", "test");
     storage->addValue("v3", true, "test", "test");
+    storage->addValue("v4", "test_string", "test", "test");
 
     QCOMPARE(storage->value<int>("v1"), 1);
     QCOMPARE(storage->value<double>("v2"), 4.5);
     QCOMPARE(storage->value<bool>("v3"), true);
+    QCOMPARE(storage->value<QString>("v4"), "test_string");
 
     delete storage;
 }

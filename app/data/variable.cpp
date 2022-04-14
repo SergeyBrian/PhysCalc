@@ -1,6 +1,6 @@
 #include "variable.h"
 
-Variable::Variable(QVariant * value, std::string name, std::string description)
+Variable::Variable(QVariant * value, QString name, QString description)
 {
     this->value_ = value;
     this->name_ = name;
@@ -12,17 +12,17 @@ QVariant * Variable::value()
     return this->value_;
 }
 
-std::string Variable::type()
+QString Variable::type()
 {
     return this->value_->typeName();
 }
 
-std::string Variable::name()
+QString Variable::name()
 {
     return this->name_;
 }
 
-std::string Variable::desc()
+QString Variable::desc()
 {
     return this->desc_;
 }

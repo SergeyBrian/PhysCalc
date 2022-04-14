@@ -6,10 +6,10 @@
 class KeyNotFoundException : public DataStorageException
 {
 public:
-    KeyNotFoundException(DataStorage * storage, std::string key);
-    std::string what();
-    std::string key;
-    static std::string message;
+    KeyNotFoundException(DataStorage * storage, QString key);
+    QString what();
+    QString key;
+    static QString message;
 };
 
 #endif // KEYNOTFOUNDEXCEPTION_H
