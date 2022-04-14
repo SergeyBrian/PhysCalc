@@ -71,4 +71,13 @@ void DataTest::testVariableStringValue()
     QCOMPARE(v.value<QString>(), "test");
 }
 
+void DataTest::testGetterOperatorOverload()
+{
+    DataStorage * storage = new DataStorage();
+    storage->addValue("v", 14, "test", "test");
+    DataStorage $ = (*storage);
+
+    QCOMPARE($["v"], 14);
+}
+
 QTEST_MAIN(DataTest)

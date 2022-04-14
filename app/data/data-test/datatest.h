@@ -20,6 +20,8 @@ private slots:
     void testVariableDesc();
     void testVariableStringValue();
 
+    void testGetterOperatorOverload();
+
 public:
     explicit DataTest(QObject *parent = nullptr);
 
