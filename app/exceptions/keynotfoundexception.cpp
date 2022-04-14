@@ -1,13 +1,13 @@
 #include "keynotfoundexception.h"
 
-std::string KeyNotFoundException::message = "No value with given key was found";
+QString KeyNotFoundException::message = "No value with given key was found";
 
-KeyNotFoundException::KeyNotFoundException(DataStorage * storage, std::string key) : DataStorageException(storage)
+KeyNotFoundException::KeyNotFoundException(DataStorage * storage, QString key) : DataStorageException(storage)
 {
     this->key = key;
 }
 
-std::string KeyNotFoundException::what()
+QString KeyNotFoundException::what()
 {
     return this->message;
 }

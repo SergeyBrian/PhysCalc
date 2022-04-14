@@ -7,7 +7,7 @@ class DataStorageException
 {
 public:
     DataStorageException(DataStorage * storage);
-    std::string what();
+    QString what();
     DataStorage * storage;
 };
 

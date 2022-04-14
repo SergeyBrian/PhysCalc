@@ -9,8 +9,8 @@
 class Table
 {
 public:
-    Table(std::string tablename);
-    Table(std::string tablename, std::string filename);
+    Table(QString tablename);
+    Table(QString tablename, QString filename);
 
     ~Table();
 
@@ -37,8 +37,8 @@ public:
 
 
 private:
-    std::string tablename;
-    std::string filename;
+    QString tablename;
+    QString filename;
 };
 
 #endif // TABLE_H

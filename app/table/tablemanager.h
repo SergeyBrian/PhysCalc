@@ -11,14 +11,14 @@ public:
     TableManager();
     ~TableManager();
 
-    void openTable(std::string tablename, std::string filename);
-    void openTable(std::string tablename);
+    void openTable(QString tablename, QString filename);
+    void openTable(QString tablename);
 
-    void closeTable(std::string tablename);
+    void closeTable(QString tablename);
 
-    Table * getTable(std::string tablename);
+    Table * getTable(QString tablename);
 private:
-    std::map<std::string, Table *> tables;
+    std::map<QString, Table *> tables;
 };
 
 #endif // TABLEMANAGER_H

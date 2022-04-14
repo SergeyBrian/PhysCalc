@@ -1,6 +1,6 @@
 #include "valueconversionfailedexception.h"
 
-ValueConversionFailedException::ValueConversionFailedException(DataStorage * storage, std::string requestedType, std::string realType) : DataStorageException(storage)
+ValueConversionFailedException::ValueConversionFailedException(DataStorage * storage, QString requestedType, QString realType) : DataStorageException(storage)
 {
     this->requestedType = requestedType;
     this->realType = realType;
