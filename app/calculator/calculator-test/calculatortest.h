@@ -13,6 +13,7 @@ private slots:
     void testHeatCapacityCalculatorFactory();
     void testHeatingValueCalculatorFactory();
 
+    void testCalculatorNotFoundException();
 
 
 public:

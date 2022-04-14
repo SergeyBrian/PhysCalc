@@ -1,5 +1,7 @@
 #include "calculatortest.h"
 
+#include "../../exceptions/calculatorexceptions.h"
+
 CalculatorTest::CalculatorTest(QObject *parent) : QObject(parent)
 {
 }
@@ -20,6 +22,13 @@ void CalculatorTest::testHeatingValueCalculatorFactory()
     Calculator * calc = CalculatorFactory::createCalculator(storage);
     delete storage;
     delete calc;
+}
+
+void CalculatorTest::testCalculatorNotFoundException()
+{
+    DataStorage * storage = new DataStorage();
+    storage->addValue("CURRENT_CALCULATOR", "NOT_EXSISTING_CALCULATOR", "", "");
+    QVERIFY_EXCEPTION_THROWN(CalculatorFactory::createCalculator(storage), CalculatorNotFoundException);
 }
 
 
