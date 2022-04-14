@@ -48,4 +48,28 @@ void DataTest::testGetValue()
     delete storage;
 }
 
+void DataTest::testVariableValue()
+{
+    Variable v(4, "test", "test value");
+    QCOMPARE(v.value<int>(), 4);
+}
+
+void DataTest::testVariableName()
+{
+    Variable v(4, "test", "test value");
+    QCOMPARE(v.name(), "test");
+}
+
+void DataTest::testVariableDesc()
+{
+    Variable v(4, "test", "test value");
+    QCOMPARE(v.desc(), "test value");
+}
+
+void DataTest::testVariableStringValue()
+{
+    Variable v("test", "test name", "test desc");
+    QCOMPARE(v.value<QString>(), "test");
+}
+
 QTEST_MAIN(DataTest)
