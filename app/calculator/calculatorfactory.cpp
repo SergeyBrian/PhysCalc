@@ -1,5 +1,7 @@
 #include "calculatorfactory.h"
 
+#include "../exceptions/calculatorexceptions.h"
+
 Calculator * CalculatorFactory::createCalculator(DataStorage * storage) {
     std::string calculatorName = storage->value<std::string>("CURRENT_CALCULATOR");
     if (calculatorName == "HEAT_CAPACITY")
@@ -8,4 +10,5 @@ Calculator * CalculatorFactory::createCalculator(DataStorage * storage) {
         return new HeatingValueCalculator(storage);
     if (calculatorName == "EXCESS_AIR_RATIO")
         return new ExcessAirRatioCalculator(storage);
+    throw CalculatorNotFoundException(nullptr, calculatorName);
 }
