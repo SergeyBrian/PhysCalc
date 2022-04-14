@@ -15,6 +15,13 @@ private slots:
     void testKeyNotFoundException();
     void testGetValue();
 
+    void testVariableValue();
+    void testVariableName();
+    void testVariableDesc();
+    void testVariableStringValue();
+
+    void testGetterOperatorOverload();
+
 public:
     explicit DataTest(QObject *parent = nullptr);
 

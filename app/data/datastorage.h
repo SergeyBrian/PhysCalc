@@ -6,23 +6,45 @@
 #include <map>
 #include <string>
 
+#include "variable.h"
 
 
 class DataStorage
 {
 public:
     DataStorage();
-    void addValue(std::string key, QVariant * value);
-    QVariant * getValue(std::string key);
+    void addValue(std::string key, Variable * value);
     template<typename T>
-    T getValue(std::string key) {
-        // TODO: Add real conversion ability check (e.g. string containing text becomes 0 after conversion to int)
-        QVariant * result = this->getValue(key);
-        return result->value<T>();
-    }
+    void addValue(std::string key, T value, std::string name, std::string description);
+
+    template<typename T>
+    T getValue(std::string key);
+
+    /* This operator is supposed to be used in calculator algorithms
+       when many variable values are required for calculations, it's more
+       convenient to use [] operator to get them
+     */
+    double operator[] (std::string key);
 private:
     bool hasKey(std::string key);
-    std::map<std::string, QVariant *> values;
+    std::map<std::string, Variable *> values;
 };
+
+// Template functions implementation
+
+template<typename T>
+void DataStorage::addValue(std::string key, T value, std::string name, std::string description)
+{
+    Variable * var = new Variable(value, name, description);
+    this->addValue(key, var);
+}
+
+template<typename T>
+T DataStorage::getValue(std::string key) {
+    if (!this->hasKey(key)) {
+        throw KeyNotFoundException(this, key);
+    }
+    return this->values[key]->value<T>();
+}
 
 #endif // DATASTORAGE_H
