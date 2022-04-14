@@ -1,11 +1,11 @@
 #include "table.h"
 
-Table::Table(std::string tablename)
+Table::Table(QString tablename)
 {
 
 }
 
-Table::Table(std::string tablename, std::string filename)
+Table::Table(QString tablename, QString filename)
 {
 
 }

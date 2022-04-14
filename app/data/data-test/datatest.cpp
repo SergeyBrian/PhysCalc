@@ -10,10 +10,12 @@ void DataTest::testAddValue() {
     storage->addValue("v1", 1, "test", "test");
     storage->addValue("v2", 4.5, "test", "test");
     storage->addValue("v3", true, "test", "test");
+    storage->addValue("v4", "test_string", "test", "test");
 
-    QCOMPARE(storage->getValue<int>("v1"), 1);
-    QCOMPARE(storage->getValue<double>("v2"), 4.5);
-    QCOMPARE(storage->getValue<bool>("v3"), true);
+    QCOMPARE(storage->value<int>("v1"), 1);
+    QCOMPARE(storage->value<double>("v2"), 4.5);
+    QCOMPARE(storage->value<bool>("v3"), true);
+    QCOMPARE(storage->value<QString>("v4"), "test_string");
 
     delete storage;
 }
@@ -32,7 +34,7 @@ void DataTest::testKeyNotFoundException()
 {
     DataStorage * storage = new DataStorage();
 
-    QVERIFY_EXCEPTION_THROWN(storage->getValue<int>("v"), KeyNotFoundException);
+    QVERIFY_EXCEPTION_THROWN(storage->value<int>("v"), KeyNotFoundException);
 
     delete storage;
 }
@@ -42,7 +44,7 @@ void DataTest::testGetValue()
     DataStorage * storage = new DataStorage();
 
     storage->addValue("v1", 1, "test", "test");
-    QCOMPARE(storage->getValue<int>("v1"), 1);
+    QCOMPARE(storage->value<int>("v1"), 1);
 
     delete storage;
 }

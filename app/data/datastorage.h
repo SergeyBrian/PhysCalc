@@ -13,38 +13,36 @@ class DataStorage
 {
 public:
     DataStorage();
-    void addValue(std::string key, Variable * value);
+    void addValue(QString key, Variable * value);
     template<typename T>
-    void addValue(std::string key, T value, std::string name, std::string description);
+    void addValue(QString key, T value, QString name, QString description);
 
     template<typename T>
-    T getValue(std::string key);
+    T value(QString key);
 
     /* This operator is supposed to be used in calculator algorithms
        when many variable values are required for calculations, it's more
        convenient to use [] operator to get them
      */
-    double operator[] (std::string key);
+    double operator[] (QString key);
 private:
-    bool hasKey(std::string key);
-    std::map<std::string, Variable *> values;
+    bool hasKey(QString key);
+    Variable * getValue(QString key);
+    std::map<QString, Variable *> values;
 };
 
 // Template functions implementation
 
 template<typename T>
-void DataStorage::addValue(std::string key, T value, std::string name, std::string description)
+void DataStorage::addValue(QString key, T value, QString name, QString description)
 {
     Variable * var = new Variable(value, name, description);
     this->addValue(key, var);
 }
 
 template<typename T>
-T DataStorage::getValue(std::string key) {
-    if (!this->hasKey(key)) {
-        throw KeyNotFoundException(this, key);
-    }
-    return this->values[key]->value<T>();
+T DataStorage::value(QString key) {
+    return this->getValue(key)->value<T>();
 }
 
 #endif // DATASTORAGE_H

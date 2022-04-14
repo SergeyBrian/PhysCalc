@@ -1,13 +1,13 @@
 #include "duplicatekeyexception.h"
 
-std::string DuplicateKeyException::message = "Value with given key already exsists";
+QString DuplicateKeyException::message = "Value with given key already exsists";
 
-DuplicateKeyException::DuplicateKeyException(DataStorage * storage, std::string key) : DataStorageException(storage)
+DuplicateKeyException::DuplicateKeyException(DataStorage * storage, QString key) : DataStorageException(storage)
 {
     this->key = key;
 }
 
-std::string DuplicateKeyException::what()
+QString DuplicateKeyException::what()
 {
     return this->message;
 }

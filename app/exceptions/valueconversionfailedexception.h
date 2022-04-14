@@ -6,9 +6,9 @@
 class ValueConversionFailedException : public DataStorageException
 {
 public:
-    ValueConversionFailedException(DataStorage * storage, std::string requestedType, std::string realType);
-    std::string requestedType;
-    std::string realType;
+    ValueConversionFailedException(DataStorage * storage, QString requestedType, QString realType);
+    QString requestedType;
+    QString realType;
 
 };
 

@@ -6,10 +6,10 @@
 class DuplicateKeyException : public DataStorageException
 {
 public:
-    DuplicateKeyException(DataStorage * storage, std::string key);
-    std::string what();
-    std::string key;
-    static std::string message;
+    DuplicateKeyException(DataStorage * storage, QString key);
+    QString what();
+    QString key;
+    static QString message;
 };
 
 
