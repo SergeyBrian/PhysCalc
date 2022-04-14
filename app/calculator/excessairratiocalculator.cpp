@@ -1,6 +1,6 @@
 #include "excessairratiocalculator.h"
 
-ExcessAirRatioCalculator::ExcessAirRatioCalculator()
+ExcessAirRatioCalculator::ExcessAirRatioCalculator(DataStorage * storage)
 {
 
 }

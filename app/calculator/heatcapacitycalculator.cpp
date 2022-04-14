@@ -1,6 +1,6 @@
 #include "heatcapacitycalculator.h"
 
-HeatCapacityCalculator::HeatCapacityCalculator()
+HeatCapacityCalculator::HeatCapacityCalculator(DataStorage * storage)
 {
 
 }

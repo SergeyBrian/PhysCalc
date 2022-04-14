@@ -1,6 +1,6 @@
 #include "heatingvaluecalculator.h"
 
-HeatingValueCalculator::HeatingValueCalculator()
+HeatingValueCalculator::HeatingValueCalculator(DataStorage * storage)
 {
 
 }

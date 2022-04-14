@@ -6,7 +6,7 @@
 class ExcessAirRatioCalculator : public Calculator
 {
 public:
-    ExcessAirRatioCalculator();
+    ExcessAirRatioCalculator(DataStorage * storage);
 };
 
 #endif // EXCESSAIRRATIOCALCULATOR_H

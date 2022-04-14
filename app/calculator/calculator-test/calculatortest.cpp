@@ -4,16 +4,22 @@ CalculatorTest::CalculatorTest(QObject *parent) : QObject(parent)
 {
 }
 
-void CalculatorTest::testHeatCapacityCalculatorFactory() {
-    CalculatorFactory * heatCapacityCalculatorFactory = CalculatorFactory::getFactory();
-    QCOMPARE(heatCapacityCalculatorFactory->createCalculator(), new HeatCapacityCalculator());
-    delete heatCapacityCalculatorFactory;
+void CalculatorTest::testHeatCapacityCalculatorFactory()
+{
+    DataStorage * storage = new DataStorage();
+    storage->addValue("CURRENT_CALCULATOR", "HEAT_CAPACITY", "", "");
+    Calculator * calc = CalculatorFactory::createCalculator(storage);
+    delete storage;
+    delete calc;
 }
 
-void CalculatorTest::testHeatingValueCalculatorFactory() {
-    CalculatorFactory * heatingValueCalculatorFactory = CalculatorFactory::getFactory();
-    QCOMPARE(heatingValueCalculatorFactory->createCalculator(), new HeatingValueCalculator());
-    delete heatingValueCalculatorFactory;
+void CalculatorTest::testHeatingValueCalculatorFactory()
+{
+    DataStorage * storage = new DataStorage();
+    storage->addValue("CURRENT_CALCULATOR", "HEATING_VALUE", "", "");
+    Calculator * calc = CalculatorFactory::createCalculator(storage);
+    delete storage;
+    delete calc;
 }
 
 

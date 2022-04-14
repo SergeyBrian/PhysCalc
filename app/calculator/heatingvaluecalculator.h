@@ -6,7 +6,7 @@
 class HeatingValueCalculator : public Calculator
 {
 public:
-    HeatingValueCalculator();
+    HeatingValueCalculator(DataStorage * storage);
 };
 
 #endif // HEATINGVALUECALCULATOR_H

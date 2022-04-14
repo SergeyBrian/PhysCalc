@@ -7,7 +7,7 @@
 class Calculator
 {
 public:
-    Calculator();
+    Calculator() {};
 };
 
 #endif // CALCULATOR_H

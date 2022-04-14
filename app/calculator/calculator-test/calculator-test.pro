@@ -7,6 +7,8 @@ CONFIG -= app_bundle
 TEMPLATE = app
 
 include(../calculator.pri)
+include(../../data/data.pri)
+include(../../exceptions/exceptions.pri)
 
 HEADERS += \
     calculatortest.h
