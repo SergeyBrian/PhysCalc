@@ -19,6 +19,12 @@ public:
 
     template<typename T>
     T getValue(std::string key);
+
+    /* This operator is supposed to be used in calculator algorithms
+       when many variable values are required for calculations, it's more
+       convenient to use [] operator to get them
+     */
+    double operator[] (std::string key);
 private:
     bool hasKey(std::string key);
     std::map<std::string, Variable *> values;
