@@ -2,11 +2,11 @@
 
 ## 1.1 `Table`
 
-### `Table(std::string tablename)`
+### `Table(QString tablename)`
 
 Конструктор для создания пустой виртуальной таблицы
 
-### `Table(std::string tablename, std::string filename)`
+### `Table(QString tablename, QString filename)`
 
 Конструктор для создания таблицы, содержимое которой загружается из файла
 
@@ -78,15 +78,15 @@
 
 Вызывает `closeTable` для всех открытых таблиц, после чего удаляет их
 
-### `void openTable(std::string tablename)`
+### `void openTable(QString tablename)`
 
 Создает пустую виртуальную таблицу, не привязанную к файлу
 
-### `void openTable(std::string tablename, std::string filename)`
+### `void openTable(QString tablename, QString filename)`
 
 Создает виртуальную таблицу и заполняет ее данными из файла
 
-### `void closeTable(std::string tablename)`
+### `void closeTable(QString tablename)`
 
 Закрывает таблицу с указанным именем
 
@@ -96,25 +96,25 @@
 
 ### `DataStorage()`
 
-### `void addValue(std::string key, Variable * value)`
+### `void addValue(QString key, Variable * value)`
 
 Добавить заранее созданную переменную и сохранить ее под ключом `key`
 
-### `void addValue(std::string key, T value, std::string name, std::string description)`
+### `void addValue(QString key, T value, QString name, QString description)`
 
 Создать новую переменную `value` типа `T` и сохранить ее под ключом `key`
 
-### `T value(std::string key)`
+### `T value(QString key)`
 
 Получить значение переменной, сохраненной под ключом `key`
 
-### `double operator[] (std::string key)`
+### `double operator[] (QString key)`
 
 Получить значение переменной, сохраненной под ключом `key`. Значение будет приведено к `double`. Оператор предназначен для сокращения кода, запрашивающего значение для вычислений
 
 ## 2.2 `Variable`
 
-### `Variable(T value, std::string name, std::string description)`
+### `Variable(T value, QString name, QString description)`
 
 ### `void value(T value)`
 
@@ -124,14 +124,14 @@
 
 Возвращает значение переменной, приведенное к типу `T`
 
-### `std::string type()`
+### `QString type()`
 
 Возвращает тип переменной
 
-### `std::string name()`
+### `QString name()`
 
 Возвращает название переменной
 
-### `std::string desc()`
+### `QString desc()`
 
 Возвращает описание переменной
