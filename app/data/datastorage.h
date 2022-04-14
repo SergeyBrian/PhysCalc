@@ -8,7 +8,6 @@
 
 #include "variable.h"
 
-Q_DECLARE_METATYPE(std::string);
 
 class DataStorage
 {
