@@ -90,3 +90,48 @@
 
 Закрывает таблицу с указанным именем
 
+# 2. Модуль `data`
+
+## 2.1 `DataStorage`
+
+### `DataStorage()`
+
+### `void addValue(std::string key, Variable * value)`
+
+Добавить заранее созданную переменную и сохранить ее под ключом `key`
+
+### `void addValue(std::string key, T value, std::string name, std::string description)`
+
+Создать новую переменную `value` типа `T` и сохранить ее под ключом `key`
+
+### `T getValue(std::string key)`
+
+Получить значение переменной, сохраненной под ключом `key`
+
+### `double operator[] (std::string key)`
+
+Получить значение переменной, сохраненной под ключом `key`. Значение будет приведено к `double`. Оператор предназначен для сокращения кода, запрашивающего значение для вычислений
+
+## 2.2 `Variable`
+
+### `Variable(T value, std::string name, std::string description)`
+
+### `void value(T value)`
+
+Устанавливает значение переменной
+
+### `T value()`
+
+Возвращает значение переменной, приведенное к типу `T`
+
+### `std::string type()`
+
+Возвращает тип переменной
+
+### `std::string name()`
+
+Возвращает название переменной
+
+### `std::string desc()`
+
+Возвращает описание переменной
