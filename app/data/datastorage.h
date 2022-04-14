@@ -8,6 +8,7 @@
 
 #include "variable.h"
 
+Q_DECLARE_METATYPE(std::string);
 
 class DataStorage
 {
@@ -18,7 +19,7 @@ public:
     void addValue(std::string key, T value, std::string name, std::string description);
 
     template<typename T>
-    T getValue(std::string key);
+    T value(std::string key);
 
     /* This operator is supposed to be used in calculator algorithms
        when many variable values are required for calculations, it's more
@@ -27,6 +28,7 @@ public:
     double operator[] (std::string key);
 private:
     bool hasKey(std::string key);
+    Variable * getValue(std::string key);
     std::map<std::string, Variable *> values;
 };
 
@@ -40,11 +42,8 @@ void DataStorage::addValue(std::string key, T value, std::string name, std::stri
 }
 
 template<typename T>
-T DataStorage::getValue(std::string key) {
-    if (!this->hasKey(key)) {
-        throw KeyNotFoundException(this, key);
-    }
-    return this->values[key]->value<T>();
+T DataStorage::value(std::string key) {
+    return this->getValue(key)->value<T>();
 }
 
 #endif // DATASTORAGE_H
