@@ -6,10 +6,10 @@
 class CalculatorNotFoundException : public CalculatorException
 {
 public:
-    CalculatorNotFoundException(Calculator * calculator, std::string requestedName);
-    std::string what();
-    std::string name;
-    static std::string message;
+    CalculatorNotFoundException(Calculator * calculator, QString requestedName);
+    QString what();
+    QString name;
+    static QString message;
 };
 
 #endif // CALCULATORNOTFOUNDEXCEPTION_H

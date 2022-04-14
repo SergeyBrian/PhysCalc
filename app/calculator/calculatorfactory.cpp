@@ -3,7 +3,7 @@
 #include "../exceptions/calculatorexceptions.h"
 
 Calculator * CalculatorFactory::createCalculator(DataStorage * storage) {
-    std::string calculatorName = storage->value<std::string>("CURRENT_CALCULATOR");
+    QString calculatorName = storage->value<QString>("CURRENT_CALCULATOR");
     if (calculatorName == "HEAT_CAPACITY")
         return new HeatCapacityCalculator(storage);
     if (calculatorName == "HEATING_VALUE")
