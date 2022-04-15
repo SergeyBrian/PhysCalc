@@ -2,11 +2,11 @@
 
 ## 1.1 `Table`
 
-### `Table(std::string tablename)`
+### `Table(QString tablename)`
 
 Конструктор для создания пустой виртуальной таблицы
 
-### `Table(std::string tablename, std::string filename)`
+### `Table(QString tablename, QString filename)`
 
 Конструктор для создания таблицы, содержимое которой загружается из файла
 
@@ -78,15 +78,95 @@
 
 Вызывает `closeTable` для всех открытых таблиц, после чего удаляет их
 
-### `void openTable(std::string tablename)`
+### `void openTable(QString tablename)`
 
 Создает пустую виртуальную таблицу, не привязанную к файлу
 
-### `void openTable(std::string tablename, std::string filename)`
+### `void openTable(QString tablename, QString filename)`
 
 Создает виртуальную таблицу и заполняет ее данными из файла
 
-### `void closeTable(std::string tablename)`
+### `void closeTable(QString tablename)`
 
 Закрывает таблицу с указанным именем
+
+# 2. Модуль `data`
+
+## 2.1 `DataStorage`
+
+### `DataStorage()`
+
+### `void addValue(QString key, Variable * value)`
+
+Добавляет заранее созданную переменную и сохранить ее под ключом `key`
+
+### `void addValue(QString key, T value, QString name, QString description)`
+
+Создает новую переменную `value` типа `T` и сохранить ее под ключом `key`
+
+### `Variable * getValue(QString key)`
+
+Возвращает переменную под ключом `key` без приведения к типу
+
+### `T value(QString key)`
+
+Возвращает значение переменной, сохраненной под ключом `key`
+
+### `double operator[] (QString key)`
+
+Возвращает значение переменной, сохраненной под ключом `key`. Значение будет приведено к `double`. Оператор предназначен для сокращения кода, запрашивающего значение для вычислений
+
+## 2.2 `Variable`
+
+### `Variable(T value, QString name, QString description)`
+
+### `void value(T value)`
+
+Устанавливает значение переменной
+
+### `T value()`
+
+Возвращает значение переменной, приведенное к типу `T`
+
+### `QString type()`
+
+Возвращает тип переменной
+
+### `QString name()`
+
+Возвращает название переменной
+
+### `QString desc()`
+
+Возвращает описание переменной
+
+# 3. Модуль `calculator`
+
+## 3.1 `Calculator`
+
+Класс-интерфейс, через который можно обращаться ко любому созданному калькулятору
+
+### `Calculator(DataStorage * storage)`
+
+### `std::vector<QString> getRequiredVariablesList()`
+
+Возвращает список ключей переменных, необходимых для вычислений. Создает в `DataStorage`, указанном в конструкторе записи об этих переменных
+
+### `double calculate()`
+
+Возвращает результат вычислений
+
+## 3.2 `namespace CalculatorFactory`
+
+### `Calculator * createCalculator(DataStorage * storage)`
+
+Возвращает новый калькулятор, привязанный к `storage`. Чтобы указать требуемый тип калькулятора, в  хранилище `storage` должна содержаться запись с ключом `“CURRENT_CALCULATOR”` и с значением `QString`. 
+
+*Допустимые значения*:
+
+* `“HEAT_CAPACITY”`
+* `“HEATING_VALUE”`
+* `“EXCESS_AIR_RATIO”`
+
+
 

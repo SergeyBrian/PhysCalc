@@ -75,8 +75,12 @@ void DataTest::testVariableWithSourceCalc()
     if (var->calc().isEmpty()) {
         QFAIL("Source calculator was not set");
     }
+}
 
-    delete storage;
+void DataTest::testVariableType()
+{
+    Variable v((double)5, "test", "test value");
+    QCOMPARE(v.type(), typeid(double).name());
 }
 
 void DataTest::testVariableStringValue()
