@@ -17,6 +17,7 @@ public:
     template<typename T>
     void addValue(QString key, T value, QString name, QString description);
 
+    Variable * getValue(QString key);
     template<typename T>
     T value(QString key);
 
@@ -27,7 +28,6 @@ public:
     double operator[] (QString key);
 private:
     bool hasKey(QString key);
-    Variable * getValue(QString key);
     std::map<QString, Variable *> values;
 };
 
