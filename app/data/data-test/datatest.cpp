@@ -67,11 +67,24 @@ void DataTest::testVariableDesc()
     QCOMPARE(v.desc(), "test value");
 }
 
+void DataTest::testVariableWithSourceCalc()
+{
+    DataStorage * storage = new DataStorage();
+    storage->addValue("v", (double)0, "var", "desc", "HEAT_CAPACITY");
+    Variable * var = storage->getValue("v");
+    if (var->calc().isEmpty()) {
+        QFAIL("Source calculator was not set");
+    }
+
+    delete storage;
+}
+
 void DataTest::testVariableStringValue()
 {
     Variable v("test", "test name", "test desc");
     QCOMPARE(v.value<QString>(), "test");
 }
+
 
 void DataTest::testGetterOperatorOverload()
 {

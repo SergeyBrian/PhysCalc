@@ -19,6 +19,7 @@ private slots:
     void testVariableName();
     void testVariableDesc();
     void testVariableStringValue();
+    void testVariableWithSourceCalc();
 
     void testGetterOperatorOverload();
 
