@@ -9,7 +9,7 @@ class Variable
 {
 public:
     template<typename T>
-    Variable(T value, QString name, QString description);
+    Variable(T value, QString name, QString description, QString sourceCalculator = QString(""));
 
     template<typename T>
     void value(T value);
@@ -20,23 +20,25 @@ public:
     QString type();
     QString name();
     QString desc();
+    QString calc();
 private:
-    Variable(QVariant * value, QString name, QString description);
     QVariant * value();
 
     QString name_;
     QString desc_;
+    QString calc_;
     QVariant * value_;
 };
 
 // Tamplate methods implementation
 
 template<typename T>
-Variable::Variable(T value, QString name, QString description)
+Variable::Variable(T value, QString name, QString description, QString sourceCalculator)
 {
     this->value_ = new QVariant(value);
     this->name_ = name;
     this->desc_ = description;
+    this->calc_ = sourceCalculator;
 }
 
 template<typename T>

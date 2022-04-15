@@ -1,12 +1,5 @@
 #include "variable.h"
 
-Variable::Variable(QVariant * value, QString name, QString description)
-{
-    this->value_ = value;
-    this->name_ = name;
-    this->desc_ = description;
-}
-
 QVariant * Variable::value()
 {
     return this->value_;
@@ -25,4 +18,9 @@ QString Variable::name()
 QString Variable::desc()
 {
     return this->desc_;
+}
+
+QString Variable::calc()
+{
+    return this->calc_;
 }
