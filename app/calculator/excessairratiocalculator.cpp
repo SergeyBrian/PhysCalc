@@ -23,6 +23,7 @@ std::vector<QString> ExcessAirRatioCalculator::getRequiredVariablesList()
     return variableKeys;
 }
 
-double calculate() {
+double ExcessAirRatioCalculator::calculate()
+{
     return 0;
 }
