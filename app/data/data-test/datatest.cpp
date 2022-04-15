@@ -67,6 +67,12 @@ void DataTest::testVariableDesc()
     QCOMPARE(v.desc(), "test value");
 }
 
+void DataTest::testVariableType()
+{
+    Variable v((double)5, "test", "test value");
+    QCOMPARE(v.type(), typeid(double).name());
+}
+
 void DataTest::testVariableStringValue()
 {
     Variable v("test", "test name", "test desc");
