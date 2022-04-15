@@ -10,7 +10,7 @@ ExcessAirRatioCalculator::ExcessAirRatioCalculator(DataStorage * storage) : Calc
 
 std::vector<QString> ExcessAirRatioCalculator::getRequiredVariablesList()
 {
-    for (int i = 0; i < variableKeys.size(); i++)
+    for (unsigned int i = 0; i < variableKeys.size(); i++)
     {
         try {
             storage->addValue(variableKeys[i], variablePlaceholders[i]);
@@ -23,6 +23,7 @@ std::vector<QString> ExcessAirRatioCalculator::getRequiredVariablesList()
     return variableKeys;
 }
 
-double calculate() {
+double ExcessAirRatioCalculator::calculate()
+{
     return 0;
 }
