@@ -7,6 +7,7 @@ HEADERS += \
     $$PWD/heatingvaluecalculator.h
 
 SOURCES += \
+    $$PWD/calculator.cpp \
     $$PWD/calculatorfactory.cpp \
     $$PWD/excessairratiocalculator.cpp \
     $$PWD/heatcapacitycalculator.cpp \
