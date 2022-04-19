@@ -10,7 +10,7 @@ HeatingValueCalculator::HeatingValueCalculator(DataStorage * storage) : Calculat
 
 std::vector<QString> HeatingValueCalculator::getRequiredVariablesList()
 {
-    for (int i = 0; i < variableKeys.size(); i++)
+    for (unsigned int i = 0; i < variableKeys.size(); i++)
     {
         try {
             storage->addValue(variableKeys[i], variablePlaceholders[i]);

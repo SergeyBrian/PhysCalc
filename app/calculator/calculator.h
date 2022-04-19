@@ -15,6 +15,8 @@ public:
     virtual std::vector<QString> getRequiredVariablesList() = 0;
 protected:
     double $(QString key);
+    double $(QString key, double i);
+    double $(QString key, int i);
 };
 
 #endif // CALCULATOR_H
