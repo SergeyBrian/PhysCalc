@@ -16,16 +16,13 @@ public:
     void addValue(QString key, Variable * value);
     template<typename T>
     void addValue(QString key, T value, QString name, QString description, QString sourceCalculator = "");
+    template<typename T>
+    void setValue(QString key, T valule);
 
     Variable * getValue(QString key);
     template<typename T>
     T value(QString key);
 
-    /*
-     * This operator is supposed to be used in calculator algorithms
-     * when many variable values are required for calculations, it's more
-     * convenient to use [] operator to get them
-     */
     double operator[] (QString key);
 private:
     bool hasKey(QString key);
@@ -33,6 +30,12 @@ private:
 };
 
 // Template functions implementation
+
+template<typename T>
+void DataStorage::setValue(QString key, T value) {
+    Variable * var = this->getValue(key);
+    var->value(value);
+}
 
 template<typename T>
 void DataStorage::addValue(QString key, T value, QString name, QString description, QString sourceCalculator) {

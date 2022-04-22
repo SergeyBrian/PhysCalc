@@ -24,3 +24,8 @@ QString Variable::calc()
 {
     return this->calc_;
 }
+
+bool Variable::bConst()
+{
+    return this->const_;
+}
