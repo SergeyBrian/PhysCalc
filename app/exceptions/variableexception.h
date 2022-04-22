@@ -9,7 +9,6 @@ public:
     VariableException(Variable * variable);
     Variable * variable;
     QString what();
-    static QString message;
 };
 
 #endif // VARIABLEEXCEPTION_H

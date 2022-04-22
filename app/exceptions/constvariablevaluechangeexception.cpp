@@ -1,8 +1,13 @@
 #include "constvariablevaluechangeexception.h"
 
-QString message = "Can't change value of const variable";
+QString ConstVariableValueChangeException::message = "Can't change value of const variable";
 
-ConstVariablevalueChangeException::ConstVariablevalueChangeException(Variable * variable) : VariableException(variable)
+ConstVariableValueChangeException::ConstVariableValueChangeException(Variable * variable) : VariableException(variable)
 {
     this->variable = variable;
+}
+
+QString ConstVariableValueChangeException::what()
+{
+    return this->message;
 }

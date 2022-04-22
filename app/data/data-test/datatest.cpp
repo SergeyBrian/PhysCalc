@@ -1,5 +1,6 @@
 #include "datatest.h"
 #include "../../exceptions/dataexceptions.h"
+#include "../../exceptions/variableexceptions.h"
 
 DataTest::DataTest(QObject *parent) : QObject(parent)
 {
@@ -70,7 +71,7 @@ void DataTest::testVariableDesc()
 void DataTest::testVariableWithSourceCalc()
 {
     DataStorage * storage = new DataStorage();
-    storage->addValue("v", (double)0, "var", "desc", "HEAT_CAPACITY");
+    storage->addValue("v", (double)0, "var", "desc", VARIABLE, "HEAT_CAPACITY");
     Variable * var = storage->getValue("v");
     if (var->calc().isEmpty()) {
         QFAIL("Source calculator was not set");
@@ -97,6 +98,21 @@ void DataTest::testGetterOperatorOverload()
     DataStorage $ = (*storage);
 
     QCOMPARE($["v"], 14);
+}
+
+void DataTest::testConstVariable()
+{
+    DataStorage * storage = new DataStorage();
+    storage->addValue("v", 1, "test name", "test description", CONST);
+    QVERIFY_EXCEPTION_THROWN(storage->setValue("v", 10), ConstVariableValueChangeException);
+}
+
+void DataTest::testSetVariableValue()
+{
+    DataStorage * storage = new DataStorage();
+    storage->addValue("v", 1, "test name", "test description");
+    storage->setValue("v", 2);
+    QCOMPARE(storage->value<int>("v"), 2);
 }
 
 QTEST_MAIN(DataTest)

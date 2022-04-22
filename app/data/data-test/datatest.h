@@ -24,6 +24,9 @@ private slots:
 
     void testGetterOperatorOverload();
 
+    void testConstVariable();
+    void testSetVariableValue();
+
 public:
     explicit DataTest(QObject *parent = nullptr);
 

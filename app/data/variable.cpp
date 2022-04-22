@@ -1,8 +1,17 @@
 #include "variable.h"
 
+#include "../exceptions/variableexceptions.h"
+
 QVariant * Variable::value()
 {
     return this->value_;
+}
+
+void Variable::checkConst()
+{
+    if (this->const_) {
+        throw ConstVariableValueChangeException(this);
+    }
 }
 
 QString Variable::type()

@@ -37,6 +37,8 @@ private:
     QString calc_;
     bool const_;
     QVariant * value_;
+
+    void checkConst();
 };
 
 // Tamplate methods implementation
@@ -48,16 +50,12 @@ Variable::Variable(T value, QString name, QString description, QString sourceCal
     this->name_ = name;
     this->desc_ = description;
     this->calc_ = sourceCalculator;
-    if (state == 0) {
-        this->const_ = true;
-    }
+    this->const_ = state == CONST;
 }
 
 template<typename T>
 void Variable::value(T value) {
-    if (const_) {
-        throw ConstVariableValueChangeException(nullptr, this);
-    }
+    this->checkConst();
     this->value_ = new QVariant(value);
 }
 

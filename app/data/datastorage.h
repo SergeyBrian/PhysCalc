@@ -15,7 +15,7 @@ public:
     DataStorage();
     void addValue(QString key, Variable * value);
     template<typename T>
-    void addValue(QString key, T value, QString name, QString description, QString sourceCalculator = "");
+    void addValue(QString key, T value, QString name, QString description, VariableState state = VARIABLE, QString sourceCalculator = "");
     template<typename T>
     void setValue(QString key, T valule);
 
@@ -38,8 +38,8 @@ void DataStorage::setValue(QString key, T value) {
 }
 
 template<typename T>
-void DataStorage::addValue(QString key, T value, QString name, QString description, QString sourceCalculator) {
-    Variable * var = new Variable(value, name, description, sourceCalculator);
+void DataStorage::addValue(QString key, T value, QString name, QString description, VariableState state, QString sourceCalculator) {
+    Variable * var = new Variable(value, name, description, sourceCalculator, state);
     this->addValue(key, var);
 }
 

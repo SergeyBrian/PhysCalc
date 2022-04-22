@@ -3,10 +3,10 @@
 
 #include "variableexception.h"
 
-class ConstVariablevalueChangeException : public VariableException
+class ConstVariableValueChangeException : public VariableException
 {
 public:
-    ConstVariablevalueChangeException(Variable * variable);
+    ConstVariableValueChangeException(Variable * variable);
     Variable * variable;
     QString what();
     static QString message;
