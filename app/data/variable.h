@@ -6,14 +6,13 @@
 #include <string>
 
 enum VariableState {
-    CONST,
-    VARIABLE
+    VARIABLE,
+    CONST
 };
 
 class Variable
 {
 public:
-    template<typename T>
     Variable(QString name, QString description, QString sourceCalculator = QString(""));
     template<typename T>
     Variable(T value, QString name, QString description, QString sourceCalculator = QString(""), VariableState state = VARIABLE);
@@ -42,6 +41,7 @@ private:
 };
 
 // Tamplate methods implementation
+
 
 template<typename T>
 Variable::Variable(T value, QString name, QString description, QString sourceCalculator, VariableState state)

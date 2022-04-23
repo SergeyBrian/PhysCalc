@@ -115,4 +115,13 @@ void DataTest::testSetVariableValue()
     QCOMPARE(storage->value<int>("v"), 2);
 }
 
+void DataTest::testNullInitializedVariable()
+{
+    DataStorage * storage = new DataStorage();
+    Variable * var = new Variable("name", "description");
+    storage->addValue("v", var);
+    storage->setValue("v", 4);
+    QCOMPARE(storage->value<int>("v"), 4);
+}
+
 QTEST_MAIN(DataTest)

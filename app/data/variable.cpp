@@ -2,6 +2,15 @@
 
 #include "../exceptions/variableexceptions.h"
 
+Variable::Variable(QString name, QString description, QString sourceCalculator)
+{
+    this->value_ = new QVariant();
+    this->name_ = name;
+    this->desc_ = description;
+    this->calc_ = sourceCalculator;
+    this->const_ = VARIABLE;
+}
+
 QVariant * Variable::value()
 {
     return this->value_;

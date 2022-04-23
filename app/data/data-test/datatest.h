@@ -27,6 +27,8 @@ private slots:
     void testConstVariable();
     void testSetVariableValue();
 
+    void testNullInitializedVariable();
+
 public:
     explicit DataTest(QObject *parent = nullptr);
 
