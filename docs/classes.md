@@ -112,13 +112,21 @@
 
 Возвращает значение переменной, сохраненной под ключом `key`
 
+### `void setValue(QString key, T value)`
+
+Устанавливает значение существующей переменной под ключом `key`
+
 ### `double operator[] (QString key)`
 
 Возвращает значение переменной, сохраненной под ключом `key`. Значение будет приведено к `double`. Оператор предназначен для сокращения кода, запрашивающего значение для вычислений
 
 ## 2.2 `Variable`
 
-### `Variable(T value, QString name, QString description)`
+### `Variable(T value, QString name, QString description, QString sourceCalculator = QString(""), VariableState state = VARIABLE)`
+
+### `Variable(QString name, QString description, QString sourceCalculator = QString(""))`
+
+Конструктор, создающий переменную с незаданным значением
 
 ### `void value(T value)`
 
