@@ -17,7 +17,7 @@ public:
     template<typename T>
     void addValue(QString key, T value, QString name, QString description, VariableState state = REQUIRED, QString sourceCalculator = "");
     template<typename T>
-    void setValue(QString key, T valule);
+    void setValue(QString key, T value);
 
     Variable * getValue(QString key);
     template<typename T>
