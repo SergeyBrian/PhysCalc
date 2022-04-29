@@ -4,12 +4,20 @@
 #include <QVariant>
 
 #include <string>
+#include "../enums.h"
+
+enum VariableState {
+    REQUIRED,
+    CONST,
+    OPTIONAL
+};
 
 class Variable
 {
 public:
+    Variable(QString name, QString description, Calculators::Calculator sourceCalculator = Calculators::NONE);
     template<typename T>
-    Variable(T value, QString name, QString description, QString sourceCalculator = QString(""));
+    Variable(T value, QString name, QString description, Calculators::Calculator sourceCalculator = Calculators::NONE, VariableState state = REQUIRED);
 
     template<typename T>
     void value(T value);
@@ -17,38 +25,25 @@ public:
     template<typename T>
     T value();
 
+    void setState(VariableState state);
+
     QString type();
     QString name();
     QString desc();
-    QString calc();
+    Calculators::Calculator calc();
+    VariableState state();
 private:
     QVariant * value();
 
     QString name_;
     QString desc_;
-    QString calc_;
+    Calculators::Calculator calc_;
+    VariableState state_;
     QVariant * value_;
+
+    void checkConst();
 };
 
-// Tamplate methods implementation
-
-template<typename T>
-Variable::Variable(T value, QString name, QString description, QString sourceCalculator)
-{
-    this->value_ = new QVariant(value);
-    this->name_ = name;
-    this->desc_ = description;
-    this->calc_ = sourceCalculator;
-}
-
-template<typename T>
-void Variable::value(T value) {
-    this->value(new QVariant(value));
-}
-
-template<typename T>
-T Variable::value() {
-    return this->value_->value<T>();
-}
+#include "variable.inl"
 
 #endif // VARIABLE_H

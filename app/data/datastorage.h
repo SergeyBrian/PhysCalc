@@ -13,36 +13,37 @@ class DataStorage
 {
 public:
     DataStorage();
-    void addValue(QString key, Variable * value);
     template<typename T>
-    void addValue(QString key, T value, QString name, QString description, QString sourceCalculator = "");
+    void addValue(QString key, T value, QString name, QString description, VariableState state = REQUIRED,
+                  Calculators::Calculator sourceCalculator = Calculators::NONE);
+
+    template<typename T>
+    void addValue(QString key, QString name, QString description, Calculators::Calculator sourceCalculator = Calculators::NONE);
+
+    template<typename T>
+    void setValue(QString key, T value);
 
     Variable * getValue(QString key);
-    template<typename T>
-    T value(QString key);
 
-    /*
-     * This operator is supposed to be used in calculator algorithms
-     * when many variable values are required for calculations, it's more
-     * convenient to use [] operator to get them
-     */
+    template<typename T>
+    T getValue(QString key);
+
+    bool hasKey(QString key);
+
+    void setVariablesReplaceable(std::vector<QString> keys);
+
+    int getGroupId(QString key);
+
+    std::vector<QString> getKeysByGroupId(int groupId);
+
     double operator[] (QString key);
 private:
-    bool hasKey(QString key);
-    std::map<QString, Variable *> values;
+    int maxGroupId_;
+    void addValue(QString key, Variable * value);
+    void setGroupId(QString key, int groupId);
+    std::map<QString, std::pair<Variable *, int>> values;
 };
 
-// Template functions implementation
-
-template<typename T>
-void DataStorage::addValue(QString key, T value, QString name, QString description, QString sourceCalculator) {
-    Variable * var = new Variable(value, name, description, sourceCalculator);
-    this->addValue(key, var);
-}
-
-template<typename T>
-T DataStorage::value(QString key) {
-    return this->getValue(key)->value<T>();
-}
+#include "datastorage.inl"
 
 #endif // DATASTORAGE_H
