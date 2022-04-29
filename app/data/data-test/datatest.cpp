@@ -13,10 +13,10 @@ void DataTest::testAddValue() {
     storage->addValue("v3", true, "test", "test");
     storage->addValue("v4", "test_string", "test", "test");
 
-    QCOMPARE(storage->value<int>("v1"), 1);
-    QCOMPARE(storage->value<double>("v2"), 4.5);
-    QCOMPARE(storage->value<bool>("v3"), true);
-    QCOMPARE(storage->value<QString>("v4"), "test_string");
+    QCOMPARE(storage->getValue<int>("v1"), 1);
+    QCOMPARE(storage->getValue<double>("v2"), 4.5);
+    QCOMPARE(storage->getValue<bool>("v3"), true);
+    QCOMPARE(storage->getValue<QString>("v4"), "test_string");
 
     delete storage;
 }
@@ -35,7 +35,7 @@ void DataTest::testKeyNotFoundException()
 {
     DataStorage * storage = new DataStorage();
 
-    QVERIFY_EXCEPTION_THROWN(storage->value<int>("v"), KeyNotFoundException);
+    QVERIFY_EXCEPTION_THROWN(storage->getValue<int>("v"), KeyNotFoundException);
 
     delete storage;
 }
@@ -45,7 +45,7 @@ void DataTest::testGetValue()
     DataStorage * storage = new DataStorage();
 
     storage->addValue("v1", 1, "test", "test");
-    QCOMPARE(storage->value<int>("v1"), 1);
+    QCOMPARE(storage->getValue<int>("v1"), 1);
 
     delete storage;
 }
@@ -76,6 +76,7 @@ void DataTest::testVariableWithSourceCalc()
     if (var->calc().isEmpty()) {
         QFAIL("Source calculator was not set");
     }
+    delete storage;
 }
 
 void DataTest::testVariableType()
@@ -98,6 +99,7 @@ void DataTest::testGetterOperatorOverload()
     DataStorage $ = (*storage);
 
     QCOMPARE($["v"], 14);
+    delete storage;
 }
 
 void DataTest::testConstVariable()
@@ -105,6 +107,7 @@ void DataTest::testConstVariable()
     DataStorage * storage = new DataStorage();
     storage->addValue("v", 1, "test name", "test description", CONST);
     QVERIFY_EXCEPTION_THROWN(storage->setValue("v", 10), ConstVariableValueChangeException);
+    delete storage;
 }
 
 void DataTest::testSetVariableValue()
@@ -112,16 +115,30 @@ void DataTest::testSetVariableValue()
     DataStorage * storage = new DataStorage();
     storage->addValue("v", 1, "test name", "test description");
     storage->setValue("v", 2);
-    QCOMPARE(storage->value<int>("v"), 2);
+    QCOMPARE(storage->getValue<int>("v"), 2);
+    delete storage;
 }
 
 void DataTest::testNullInitializedVariable()
 {
     DataStorage * storage = new DataStorage();
-    Variable * var = new Variable("name", "description");
-    storage->addValue("v", var);
+    storage->addValue<int>("v", "test name", "test description");
     storage->setValue("v", 4);
-    QCOMPARE(storage->value<int>("v"), 4);
+    QCOMPARE(storage->getValue<int>("v"), 4);
+    delete storage;
+}
+
+void DataTest::testOptionalVariables()
+{
+    DataStorage * storage = new DataStorage();
+    storage->addValue("v1", 1, "variable 1", "");
+    storage->addValue("v2", 2, "variable 2", "");
+    storage->addValue("v3", 3, "variable 3", "");
+    storage->setVariablesReplaceable(std::vector<QString>{"v1", "v2"});
+    int groupId = storage->getGroupId("v1");
+    std::vector<QString> expectedResult = {"v1", "v2"};
+    QCOMPARE(storage->getKeysByGroupId(groupId), expectedResult);
+    delete storage;
 }
 
 QTEST_MAIN(DataTest)

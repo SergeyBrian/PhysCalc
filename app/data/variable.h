@@ -8,14 +8,7 @@
 enum VariableState {
     REQUIRED,
     CONST,
-    OPTIONAL_A,
-    OPTIONAL_B,
-    OPTIONAL_C,
-    OPTIONAL_D,
-    OPTIONAL_E,
-    OPTIONAL_F,
-    OPTIONAL_G,
-    OPTIONAL_H
+    OPTIONAL
 };
 
 class Variable
@@ -30,6 +23,8 @@ public:
 
     template<typename T>
     T value();
+
+    void setState(VariableState state);
 
     QString type();
     QString name();

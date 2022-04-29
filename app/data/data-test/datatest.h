@@ -29,6 +29,8 @@ private slots:
 
     void testNullInitializedVariable();
 
+    void testOptionalVariables();
+
 public:
     explicit DataTest(QObject *parent = nullptr);
 

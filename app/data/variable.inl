@@ -1,5 +1,6 @@
 // Tamplate methods implementation
 
+#include "variable.h"
 
 template<typename T>
 Variable::Variable(T value, QString name, QString description, QString sourceCalculator, VariableState state)

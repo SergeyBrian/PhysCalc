@@ -11,6 +11,11 @@ Variable::Variable(QString name, QString description, QString sourceCalculator)
     this->state_ = REQUIRED;
 }
 
+void Variable::setState(VariableState state)
+{
+    this->state_ = state;
+}
+
 QVariant * Variable::value()
 {
     return this->value_;

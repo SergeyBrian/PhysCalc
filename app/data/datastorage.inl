@@ -1,5 +1,13 @@
 // Template functions implementation
 
+#include "datastorage.h"
+
+template<typename T>
+void DataStorage::addValue(QString key, QString name, QString description, QString sourceCalculator) {
+    Variable * var = new Variable(name, description, sourceCalculator);
+    this->addValue(key, var);
+}
+
 template<typename T>
 void DataStorage::setValue(QString key, T value) {
     Variable * var = this->getValue(key);
@@ -13,7 +21,7 @@ void DataStorage::addValue(QString key, T value, QString name, QString descripti
 }
 
 template<typename T>
-T DataStorage::value(QString key) {
+T DataStorage::getValue(QString key) {
     return this->getValue(key)->value<T>();
 }
 
