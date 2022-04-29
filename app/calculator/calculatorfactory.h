@@ -8,7 +8,7 @@
 
 namespace CalculatorFactory
 {
-    Calculator * createCalculator(DataStorage * storage);
+    Calculator * createCalculator(DataStorage * storage, Calculators::Calculator type);
 };
 
 

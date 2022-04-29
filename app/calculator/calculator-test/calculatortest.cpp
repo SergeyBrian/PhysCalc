@@ -28,7 +28,7 @@ void CalculatorTest::testCalculatorNotFoundException()
 {
     DataStorage * storage = new DataStorage();
     storage->addValue("CURRENT_CALCULATOR", "NOT_EXSISTING_CALCULATOR", "", "");
-    QVERIFY_EXCEPTION_THROWN(CalculatorFactory::createCalculator(storage), CalculatorNotFoundException);
+    QVERIFY_EXCEPTION_THROWN(CalculatorFactory::createCalculator(storage), NoneTypeCalculatorException);
 }
 
 
