@@ -8,7 +8,7 @@ Variable::Variable(T value, QString name, QString description, QString sourceCal
     this->name_ = name;
     this->desc_ = description;
     this->calc_ = sourceCalculator;
-    this->const_ = state == CONST;
+    this->state_ = state;
 }
 
 template<typename T>

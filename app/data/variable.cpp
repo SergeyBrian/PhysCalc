@@ -8,7 +8,7 @@ Variable::Variable(QString name, QString description, QString sourceCalculator)
     this->name_ = name;
     this->desc_ = description;
     this->calc_ = sourceCalculator;
-    this->const_ = VARIABLE;
+    this->state_ = REQUIRED;
 }
 
 QVariant * Variable::value()
@@ -18,7 +18,7 @@ QVariant * Variable::value()
 
 void Variable::checkConst()
 {
-    if (this->const_) {
+    if (this->state_ == CONST) {
         throw ConstVariableValueChangeException(this);
     }
 }
@@ -43,7 +43,7 @@ QString Variable::calc()
     return this->calc_;
 }
 
-bool Variable::bConst()
+VariableState Variable::state()
 {
-    return this->const_;
+    return this->state_;
 }

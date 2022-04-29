@@ -71,7 +71,7 @@ void DataTest::testVariableDesc()
 void DataTest::testVariableWithSourceCalc()
 {
     DataStorage * storage = new DataStorage();
-    storage->addValue("v", (double)0, "var", "desc", VARIABLE, "HEAT_CAPACITY");
+    storage->addValue("v", (double)0, "var", "desc", REQUIRED, "HEAT_CAPACITY");
     Variable * var = storage->getValue("v");
     if (var->calc().isEmpty()) {
         QFAIL("Source calculator was not set");

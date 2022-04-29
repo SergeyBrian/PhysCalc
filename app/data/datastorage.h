@@ -15,7 +15,7 @@ public:
     DataStorage();
     void addValue(QString key, Variable * value);
     template<typename T>
-    void addValue(QString key, T value, QString name, QString description, VariableState state = VARIABLE, QString sourceCalculator = "");
+    void addValue(QString key, T value, QString name, QString description, VariableState state = REQUIRED, QString sourceCalculator = "");
     template<typename T>
     void setValue(QString key, T valule);
 
