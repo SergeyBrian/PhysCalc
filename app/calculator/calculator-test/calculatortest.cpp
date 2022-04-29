@@ -9,8 +9,7 @@ CalculatorTest::CalculatorTest(QObject *parent) : QObject(parent)
 void CalculatorTest::testHeatCapacityCalculatorFactory()
 {
     DataStorage * storage = new DataStorage();
-    storage->addValue("CURRENT_CALCULATOR", "HEAT_CAPACITY", "", "");
-    Calculator * calc = CalculatorFactory::createCalculator(storage);
+    Calculator * calc = CalculatorFactory::createCalculator(storage, Calculators::HEAT_CAPACITY);
     delete storage;
     delete calc;
 }
@@ -18,8 +17,7 @@ void CalculatorTest::testHeatCapacityCalculatorFactory()
 void CalculatorTest::testHeatingValueCalculatorFactory()
 {
     DataStorage * storage = new DataStorage();
-    storage->addValue("CURRENT_CALCULATOR", "HEATING_VALUE", "", "");
-    Calculator * calc = CalculatorFactory::createCalculator(storage);
+    Calculator * calc = CalculatorFactory::createCalculator(storage, Calculators::HEATING_VALUE);
     delete storage;
     delete calc;
 }
@@ -27,8 +25,7 @@ void CalculatorTest::testHeatingValueCalculatorFactory()
 void CalculatorTest::testCalculatorNotFoundException()
 {
     DataStorage * storage = new DataStorage();
-    storage->addValue("CURRENT_CALCULATOR", "NOT_EXSISTING_CALCULATOR", "", "");
-    QVERIFY_EXCEPTION_THROWN(CalculatorFactory::createCalculator(storage), NoneTypeCalculatorException);
+    QVERIFY_EXCEPTION_THROWN(CalculatorFactory::createCalculator(storage, Calculators::NONE), NoneTypeCalculatorException);
 }
 
 
