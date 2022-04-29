@@ -16,10 +16,6 @@ include(exceptions/exceptions.pri)
 
 SOURCES += \
     $$PWD\main.cpp \
-    $$PWD\mainwindow.cpp
-
-HEADERS += \
-    $$PWD\mainwindow.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

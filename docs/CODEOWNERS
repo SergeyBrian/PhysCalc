@@ -1,0 +1,10 @@
+app/data/                                   @sergeybrian
+app/ui/                                     @sergeybrian
+app/table/                                  @gozebone
+
+app/calculator/heatcapacitycalculator.*     @maxsyr
+app/calculator/heatingvaluecalculator.*     @milovv
+app/calculator/excessairratiocalculator.*   @gozebone 
+
+app/calculator/*factory*                    @sergeybrian
+app/calculator/calculator.*                 @sergeybrian
