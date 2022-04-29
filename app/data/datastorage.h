@@ -14,10 +14,11 @@ class DataStorage
 public:
     DataStorage();
     template<typename T>
-    void addValue(QString key, T value, QString name, QString description, VariableState state = REQUIRED, QString sourceCalculator = "");
+    void addValue(QString key, T value, QString name, QString description, VariableState state = REQUIRED,
+                  Calculators::Calculator sourceCalculator = Calculators::NONE);
 
     template<typename T>
-    void addValue(QString key, QString name, QString description, QString sourceCalculator = "");
+    void addValue(QString key, QString name, QString description, Calculators::Calculator sourceCalculator = Calculators::NONE);
 
     template<typename T>
     void setValue(QString key, T value);

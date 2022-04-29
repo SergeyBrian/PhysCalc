@@ -4,6 +4,7 @@
 #include <QVariant>
 
 #include <string>
+#include "../enums.h"
 
 enum VariableState {
     REQUIRED,
@@ -14,9 +15,9 @@ enum VariableState {
 class Variable
 {
 public:
-    Variable(QString name, QString description, QString sourceCalculator = QString(""));
+    Variable(QString name, QString description, Calculators::Calculator sourceCalculator = Calculators::NONE);
     template<typename T>
-    Variable(T value, QString name, QString description, QString sourceCalculator = QString(""), VariableState state = REQUIRED);
+    Variable(T value, QString name, QString description, Calculators::Calculator sourceCalculator = Calculators::NONE, VariableState state = REQUIRED);
 
     template<typename T>
     void value(T value);
@@ -29,14 +30,14 @@ public:
     QString type();
     QString name();
     QString desc();
-    QString calc();
+    Calculators::Calculator calc();
     VariableState state();
 private:
     QVariant * value();
 
     QString name_;
     QString desc_;
-    QString calc_;
+    Calculators::Calculator calc_;
     VariableState state_;
     QVariant * value_;
 

@@ -3,7 +3,7 @@
 #include "datastorage.h"
 
 template<typename T>
-void DataStorage::addValue(QString key, QString name, QString description, QString sourceCalculator) {
+void DataStorage::addValue(QString key, QString name, QString description, Calculators::Calculator sourceCalculator) {
     Variable * var = new Variable(name, description, sourceCalculator);
     this->addValue(key, var);
 }
@@ -15,7 +15,7 @@ void DataStorage::setValue(QString key, T value) {
 }
 
 template<typename T>
-void DataStorage::addValue(QString key, T value, QString name, QString description, VariableState state, QString sourceCalculator) {
+void DataStorage::addValue(QString key, T value, QString name, QString description, VariableState state, Calculators::Calculator sourceCalculator) {
     Variable * var = new Variable(value, name, description, sourceCalculator, state);
     this->addValue(key, var);
 }

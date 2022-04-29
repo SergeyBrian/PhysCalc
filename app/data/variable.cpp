@@ -2,7 +2,7 @@
 
 #include "../exceptions/variableexceptions.h"
 
-Variable::Variable(QString name, QString description, QString sourceCalculator)
+Variable::Variable(QString name, QString description, Calculators::Calculator sourceCalculator)
 {
     this->value_ = new QVariant();
     this->name_ = name;
@@ -43,7 +43,7 @@ QString Variable::desc()
     return this->desc_;
 }
 
-QString Variable::calc()
+Calculators::Calculator Variable::calc()
 {
     return this->calc_;
 }
