@@ -7,7 +7,16 @@ Table::Table(QString tablename)
 
 Table::Table(QString tablename, QString filename)
 {
+    std::ifstream inputfile;
+    std::vector<std::vector<QVariant*>> lines;
+    inputfile.open(filename.c_str());
 
+    std::string line = "";
+
+    while (getline(inputfile, line)) {
+
+        Table.parse
+    }
 }
 
 Table::~Table()
