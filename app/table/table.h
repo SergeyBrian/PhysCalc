@@ -7,7 +7,6 @@
 #include <vector>
 #include <sstream>
 #include <fstream>
-#include <iostream>
 
 class Table
 {
@@ -17,23 +16,17 @@ public:
 
     ~Table();
 
-    std::vector<QVariant *> getColumn(int columnNumber);
-    std::vector<QVariant *> getColumn();
+    std::vector<QVariant *> parse(std::string line, char delimiter = ',');
+    std::vector<std::vector<QVariant *>> read();
 
-    std::vector<QVariant *> getRow(int rowNumber);
-    std::vector<QVariant *> getRow();
+    std::vector<QVariant *> getColumn(int columnNumber = 0);
+    std::vector<QVariant *> getRow(int rowNumber = 0);
 
     std::vector<std::vector<QVariant *>> getMatrix(int beginColumn, int beginRow, int endColumn, int endRow);
     std::vector<std::vector<QVariant *>> getMatrix();
 
-    void writeColumn(std::vector<QVariant *> Column);
-    void writeColumn(std::vector<QVariant *> Column, int columnNumber);
-    void writeColumn(std::vector<QVariant *> Column, int columnNumber, int beginRow);
-
-    void writeRow(std::vector<QVariant *> Row);
-    void writeRow(std::vector<QVariant *> Row, int rowNumber);
-    void writeRow(std::vector<QVariant *> Row, int rowNumber, int beginColumn);
-
+    void writeColumn(std::vector<QVariant *> Column, int columnNumber = 0, int beginRow = 0);
+    void writeRow(std::vector<QVariant *> Row, int rowNumber = 0, int beginColumn = 0);
     void writeCell(QVariant * value, int columnNumber, int rowNumber);
 
     QVariant * getCell(int columnNumber, int rowNumber);
