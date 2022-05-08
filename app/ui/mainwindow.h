@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QButtonGroup>
 #include <QPushButton>
-#include "../enams.h"
+#include "../enums.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
