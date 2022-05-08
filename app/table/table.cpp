@@ -1,21 +1,14 @@
 #include "table.h"
 
-Table::Table(QString tablename)
-{
-
-}
-
-Table::Table(QString tablename, QString filename)
+Table::Table(QString tablename, QString filename) : tablename(std::move(tablename))
 {
     std::ifstream inputfile;
-    std::vector<std::vector<QVariant*>> lines;
-    inputfile.open(filename.c_str());
-
+    inputfile.open(filename.toStdString());
     std::string line = "";
 
     while (getline(inputfile, line)) {
 
-        Table.parse
+        lines.push_back(parse(line));
     }
 }
 
