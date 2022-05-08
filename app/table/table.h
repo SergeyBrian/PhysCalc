@@ -11,13 +11,12 @@
 class Table
 {
 public:
-    Table(QString tablename);
+    Table(QString tablename) : tablename(std::move(tablename)) {};
     Table(QString tablename, QString filename);
 
     ~Table();
 
-    std::vector<QVariant *> parse(std::string line, char delimiter = ',');
-    std::vector<std::vector<QVariant *>> read();
+    static std::vector<QVariant *> parse(std::string line, char delimiter = ',');
 
     std::vector<QVariant *> getColumn(int columnNumber = 0);
     std::vector<QVariant *> getRow(int rowNumber = 0);
@@ -34,7 +33,7 @@ public:
 
 private:
     QString tablename;
-    QString filename;
+    std::vector<std::vector<QVariant *>> lines;
 };
 
 #endif // TABLE_H
