@@ -25,8 +25,7 @@ public:
 
     Variable * getValue(QString key);
 
-    template<typename T>
-    T getValue(QString key);
+    double getValueDouble(QString key);
 
     bool hasKey(QString key);
 
@@ -37,13 +36,12 @@ public:
     std::vector<QString> getKeysByGroupId(int groupId);
 
     double operator[] (QString key);
+    void addValue(QString key, Variable * value);
+
 private:
     int maxGroupId_;
-    void addValue(QString key, Variable * value);
     void setGroupId(QString key, int groupId);
     std::map<QString, std::pair<Variable *, int>> values;
 };
-
-#include "datastorage.inl"
 
 #endif // DATASTORAGE_H

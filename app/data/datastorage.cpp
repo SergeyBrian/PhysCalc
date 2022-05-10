@@ -40,7 +40,7 @@ void DataStorage::setGroupId(QString key, int groupId)
 
 double DataStorage::operator[] (QString key)
 {
-    return this->getValue<double>(key);
+    return this->getValueDouble(key);
 }
 
 bool DataStorage::hasKey(QString key)
@@ -66,4 +66,9 @@ Variable *DataStorage::getValue(QString key)
         throw KeyNotFoundException(this, key);
     }
     return this->values[key].first;
+}
+
+double DataStorage::getValueDouble(QString key)
+{
+    return values[key].first->value<double>();
 }

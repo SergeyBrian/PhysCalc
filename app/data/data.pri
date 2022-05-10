@@ -1,4 +1,4 @@
-include(../table/table.pri)
+#include(../table/table.pri)
 
 HEADERS += \
     $$PWD/datastorage.h \
