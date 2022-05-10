@@ -14,9 +14,8 @@ public:
     virtual double calculate() = 0;
     virtual std::vector<QString> getRequiredVariablesList() = 0;
 protected:
+    // magical $ method
     double $(QString key);
-    double $(QString key, double i);
-    double $(QString key, int i);
 };
 
 #endif // CALCULATOR_H

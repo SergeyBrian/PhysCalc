@@ -18,7 +18,7 @@ void Variable::value(T value) {
     this->value_ = new QVariant(value);
 }
 
-template<typename T>
-T Variable::value() {
-    return this->value_->value<T>();
-}
+//template<typename T>
+//T Variable::value() {
+//    return this->value_->value<T>();
+//}

@@ -23,7 +23,10 @@ public:
     void value(T value);
 
     template<typename T>
-    T value();
+    T value()
+    {
+        return this->value_->value<T>();
+    }
 
     void setState(VariableState state);
 
@@ -43,7 +46,5 @@ private:
 
     void checkConst();
 };
-
-#include "variable.inl"
 
 #endif // VARIABLE_H

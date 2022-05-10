@@ -3,7 +3,7 @@
 #include "../exceptions/calculatorexceptions.h"
 
 Calculator * CalculatorFactory::createCalculator(DataStorage * storage) {
-    QString calculatorName = storage->getValue<QString>("CURRENT_CALCULATOR");
+    QString calculatorName = storage->getValue("CURRENT_CALCULATOR")->name();
     if (calculatorName == "HEAT_CAPACITY")
         return new HeatCapacityCalculator(storage);
     if (calculatorName == "HEATING_VALUE")
