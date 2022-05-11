@@ -21,6 +21,15 @@ void DataStorage::addValue(QString key, T value, QString name, QString descripti
 }
 
 template<typename T>
+void DataStorage::writeValue(QString key, T value) {
+    try {
+        this->addValue(key, value);
+    }  catch (DuplicateKeyException * e) {
+        this->setValue(key, value);
+    }
+}
+
+template<typename T>
 T DataStorage::getValue(QString key) {
     return this->getValue(key)->value<T>();
 }

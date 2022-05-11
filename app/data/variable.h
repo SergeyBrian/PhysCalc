@@ -5,6 +5,7 @@
 
 #include <string>
 #include "../enums.h"
+#include "../exceptions/dataexceptions.h"
 
 enum VariableState {
     REQUIRED,
