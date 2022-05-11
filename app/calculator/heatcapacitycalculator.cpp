@@ -3,6 +3,7 @@
 
 HeatCapacityCalculator::HeatCapacityCalculator(DataStorage * storage) : Calculator(storage)
 {
+    
 }
 
 double HeatCapacityCalculator::calculate()

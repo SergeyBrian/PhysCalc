@@ -23,6 +23,9 @@ public:
     template<typename T>
     void setValue(QString key, T value);
 
+    template<typename T>
+    void writeValue(QString key, T value);
+    
     Variable * getValue(QString key);
 
     template<typename T>

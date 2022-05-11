@@ -5,6 +5,7 @@
 
 #include <string>
 #include "../enums.h"
+#include "../exceptions/dataexceptions.h"
 
 enum VariableState {
     REQUIRED,
@@ -24,6 +25,8 @@ public:
 
     template<typename T>
     T value();
+
+    bool isEmpty();
 
     void setState(VariableState state);
 
