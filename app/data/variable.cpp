@@ -11,6 +11,11 @@ Variable::Variable(QString name, QString description, Calculators::Calculator so
     this->state_ = REQUIRED;
 }
 
+bool Variable::isEmpty()
+{
+    return !(this->value_->isNull());
+}
+
 void Variable::setState(VariableState state)
 {
     this->state_ = state;
@@ -24,7 +29,7 @@ QVariant * Variable::value()
 void Variable::checkConst()
 {
     if (this->state_ == CONST) {
-        throw ConstVariableValueChangeException(this);
+        throw new ConstVariableValueChangeException();
     }
 }
 

@@ -26,6 +26,8 @@ public:
     template<typename T>
     T value();
 
+    bool isEmpty();
+
     void setState(VariableState state);
 
     QString type();
