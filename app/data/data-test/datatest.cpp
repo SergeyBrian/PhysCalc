@@ -71,7 +71,7 @@ void DataTest::testVariableDesc()
 void DataTest::testVariableWithSourceCalc()
 {
     DataStorage * storage = new DataStorage();
-    storage->addValue("v", (double)0, "var", "desc", REQUIRED, Calculators::HEAT_CAPACITY);
+    storage->addValue("v", (double)0, "var", "desc", Variables::REQUIRED, Calculators::HEAT_CAPACITY);
     Variable * var = storage->getValue("v");
     QCOMPARE(var->calc(), Calculators::HEAT_CAPACITY);
     delete storage;
@@ -103,7 +103,7 @@ void DataTest::testGetterOperatorOverload()
 void DataTest::testConstVariable()
 {
     DataStorage * storage = new DataStorage();
-    storage->addValue("v", 1, "test name", "test description", CONST);
+    storage->addValue("v", 1, "test name", "test description", Variables::CONST);
     QVERIFY_EXCEPTION_THROWN(storage->setValue("v", 10), ConstVariableValueChangeException);
     delete storage;
 }

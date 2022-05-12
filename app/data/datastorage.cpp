@@ -35,7 +35,7 @@ std::vector<QString> DataStorage::getKeysByGroupId(int groupId)
 void DataStorage::setGroupId(QString key, int groupId)
 {
     this->values[key].second = groupId;
-    this->values[key].first->setState(OPTIONAL);
+    this->values[key].first->setState(Variables::OPTIONAL);
 }
 
 double DataStorage::operator[] (QString key)
