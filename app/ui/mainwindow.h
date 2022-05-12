@@ -4,7 +4,10 @@
 #include <QMainWindow>
 #include <QButtonGroup>
 #include <QPushButton>
+
 #include "../enums.h"
+#include "../data/datastorage.h"
+#include "../calculator/calculatorfactory.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -23,5 +26,6 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
+    DataStorage * storage;
 };
 #endif // MAINWINDOW_H

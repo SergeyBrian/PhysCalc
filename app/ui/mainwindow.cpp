@@ -9,6 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
     QButtonGroup * buttonGroup = new QButtonGroup();
     std::map<Calculators::Calculator, QString> buttons = {{Calculators::HEAT_CAPACITY, "Теплоёмкость"}, {Calculators::HEATING_VALUE, "Теплотворная способность"}, {Calculators::STOICHIOMETRIC_RATIO, "Стехиометрическое соотношение"}, {Calculators::EXCESS_AIR_RATIO, "Коэффицент избытка воздуха"}};
 
+    this->storage = new DataStorage();
+
     for (auto const & button : buttons)
     {
         QPushButton * tmpButton = new QPushButton(button.second);
@@ -25,6 +27,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::onClick(int id)
 {
-    ui->statusbar->showMessage(QString::number(id));
+    Calculator * calculator = CalculatorFactory::createCalculator(storage, (Calculators::Calculator)id);
+    // TODO: Open second window, get variables from it
+    double result = calculator->calculate();
+    ui->statusbar->showMessage(QString::number(result));
 }
 

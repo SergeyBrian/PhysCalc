@@ -13,6 +13,9 @@ Calculator * CalculatorFactory::createCalculator(DataStorage * storage, Calculat
     case Calculators::EXCESS_AIR_RATIO:
         return new ExcessAirRatioCalculator(storage);
         break;
+    case Calculators::STOICHIOMETRIC_RATIO:
+        return new StoichiometricRatioCalculator(storage);
+        break;
     case Calculators::NONE:
         throw NoneTypeCalculatorException();
     }
