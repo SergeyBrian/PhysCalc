@@ -33,6 +33,7 @@
     - [`Variable * getValue(QString key)`](#variable--getvalueqstring-key)
     - [`T value(QString key)`](#t-valueqstring-key)
     - [`void setValue(QString key, T value)`](#void-setvalueqstring-key-t-value)
+    - [`void writeValue(QString key, T value)`](#void-writevalueqstring-key-t-value)
     - [`bool hasKey(QString key)`](#bool-haskeyqstring-key)
     - [`void setVariablesReplaceable(std::vector<QString> keys)`](#void-setvariablesreplaceablestdvectorqstring-keys)
     - [`int getGroupId(QString key)`](#int-getgroupidqstring-key)
@@ -47,6 +48,7 @@
     - [`Variable(T value, QString name, QString description, Calculators::Calculator sourceCalculator = Calculators::NONE, VariableState state = REQUIRED)`](#variablet-value-qstring-name-qstring-description-calculatorscalculator-sourcecalculator--calculatorsnone-variablestate-state--required)
     - [`void value(T value)`](#void-valuet-value)
     - [`T value()`](#t-value)
+    - [`bool isEmpty()`](#bool-isempty)
     - [`QString type()`](#qstring-type)
     - [`QString name()`](#qstring-name)
     - [`QString desc()`](#qstring-desc)
@@ -63,10 +65,6 @@
     - [`HEATING_VALUE`](#heating_value)
     - [`HEAT_CAPACITY`](#heat_capacity)
     - [`EXCESS_AIR_RATIO`](#excess_air_ratio)
-    - [`STOICHIOMETRIC_RATIO`](#stoichiometric_ratio)
-  - [3.4 `enum HeatingValueStates::State`](#34-enum-heatingvaluestatesstate)
-  - [3.4 `enum HeatCapacityStates::State`](#34-enum-heatcapacitystatesstate)
-
 
 # 1. Модуль `table`
 
@@ -188,6 +186,10 @@
 
 Устанавливает значение существующей переменной под ключом `key`
 
+### `void writeValue(QString key, T value)`
+
+Устанавливает значение переменной под ключом `key`, если она существует. Иначе создает новую переменную и записывает в нее значение
+
 ### `bool hasKey(QString key)`
 
 Проверяет, есть ли в хранилище переменные с указанным ключом
@@ -233,6 +235,10 @@
 ### `T value()`
 
 Возвращает значение переменной, приведенное к типу `T`
+
+### `bool isEmpty()`
+
+Проверяет, содержит ли переменная значение
 
 ### `QString type()`
 
@@ -284,12 +290,4 @@
 
 ### `EXCESS_AIR_RATIO`
 
-### `STOICHIOMETRIC_RATIO`
-
-## 3.4 `enum HeatingValueStates::State`
-
-Хранит список состояний калькулятора теплотворной способности
-
-## 3.4 `enum HeatCapacityStates::State`
-
-Хранит список состояний калькулятора теплоемкости
+`STOICHIOMETRIC_RATIO`
