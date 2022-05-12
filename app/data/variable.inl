@@ -3,7 +3,7 @@
 #include "variable.h"
 
 template<typename T>
-Variable::Variable(T value, QString name, QString description, Calculators::Calculator sourceCalculator, VariableState state)
+Variable::Variable(T value, QString name, QString description, Calculators::Calculator sourceCalculator, Variables::VariableState state)
 {
     this->value_ = new QVariant(value);
     this->name_ = name;

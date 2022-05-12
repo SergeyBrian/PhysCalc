@@ -14,7 +14,7 @@ class DataStorage
 public:
     DataStorage();
     template<typename T>
-    void addValue(QString key, T value, QString name, QString description, VariableState state = REQUIRED,
+    void addValue(QString key, T value, QString name, QString description, Variables::VariableState state = Variables::REQUIRED,
                   Calculators::Calculator sourceCalculator = Calculators::NONE);
 
     template<typename T>
@@ -22,6 +22,9 @@ public:
 
     template<typename T>
     void setValue(QString key, T value);
+
+    template<typename T>
+    void writeValue(QString key, T value);
 
     Variable * getValue(QString key);
 
