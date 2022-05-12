@@ -12,7 +12,6 @@ public:
     Calculator(DataStorage * storage);
     DataStorage * storage;
     virtual double calculate() = 0;
-    virtual std::vector<QString> getRequiredVariablesList() = 0;
 protected:
     double $(QString key);
     double $(QString key, double i);

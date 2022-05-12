@@ -1,6 +1,6 @@
 #ifndef CALCULATOREXCEPTIONS_H
 #define CALCULATOREXCEPTIONS_H
 
-#include "calculatornotfoundexception.h"
+#include "nonetypecalculatorexception.h"
 
 #endif // CALCULATOREXCEPTIONS_H
