@@ -10,7 +10,7 @@ public:
     double calculate() override;
 private:
     void calculateLiquid();
-    void calculateSolid();
+    void calculateGas();
     void calculateVolumetric();
     void calculateMass();
 };
