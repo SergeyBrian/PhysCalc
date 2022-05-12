@@ -14,13 +14,13 @@ double HeatingValueCalculator::calculate()
 
 void HeatingValueCalculator::calculateLiquid()
 {
-    double Q_vv;
+    double Q_vv = 0;
     auto Q = storage->getValue<std::vector<double>>("C_l");
     auto C = storage->getValue<std::vector<double>>("C_v");
 
     if(storage->getValue("C_m")->isEmpty())
     {
-        for(int i=1; i < Q.size(); i++)
+        for(int i=0; i < Q.size(); i++)
         {
             double X;
             X=$("Q_l",i)*$("C_v",i);
@@ -29,7 +29,7 @@ void HeatingValueCalculator::calculateLiquid()
     }
     else
     {
-        for(int i=1; i < Q.size(); i++)
+        for(int i=0; i < Q.size(); i++)
         {
             double X;
             X=$("Q_l", i)*$("C_m",i)*$("p", i);
@@ -40,13 +40,13 @@ void HeatingValueCalculator::calculateLiquid()
 
 void HeatingValueCalculator::calculateGas()
 {
-    double Q_vv;
+    double Q_vv = 0;
     auto Q = storage->getValue<std::vector<double>>("C_l");
     auto C = storage->getValue<std::vector<double>>("C_v");
 
     if(storage->getValue("C_m")->isEmpty())
         {
-        for(int i=1; i < Q.size(); i++)
+        for(int i=0; i < Q.size(); i++)
         {
             double X;
             X=$("Q_l",i)*$("C_v",i);
@@ -55,15 +55,15 @@ void HeatingValueCalculator::calculateGas()
     }
     else
     {
-        double M;
-        for(int i=1; i < Q.size(); i++)
+        double M = 0;
+        for(int i=0; i < Q.size(); i++)
         {
             M=$("C_m",i)/$("M",i);
         }
-        for(int i=1; i < Q.size(); i++)
+        for(int i=0; i < Q.size(); i++)
         {
             double X;
-            X=$("Q_l",i)*$("C_m",i)*$("m",i)*M/$("M",i);
+            X=($("Q_l",i)*$("C_m",i)*$("m",i)*M)/$("M",i);
             Q_vv+= X;
         }
     }
