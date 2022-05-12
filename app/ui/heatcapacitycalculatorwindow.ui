@@ -14,68 +14,37 @@
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="16" column="1">
-    <widget class="QLineEdit" name="lineEdit_10"/>
-   </item>
-   <item row="2" column="3">
-    <widget class="QToolButton" name="toolButton">
-     <property name="text">
-      <string>...</string>
-     </property>
-    </widget>
-   </item>
-   <item row="15" column="0">
-    <widget class="QLabel" name="label_9">
-     <property name="text">
-      <string>C&lt;sub&gt;p&lt;/sub&gt;</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string>C&lt;sub&gt;pmiB&lt;sub/&gt;</string>
-     </property>
-    </widget>
-   </item>
-   <item row="13" column="0">
-    <widget class="QLabel" name="label_8">
-     <property name="text">
-      <string>C&lt;sub&gt;pmsГ&lt;/sub&gt;</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="1">
-    <widget class="QLineEdit" name="lineEdit_4"/>
-   </item>
    <item row="13" column="1">
-    <widget class="QLineEdit" name="lineEdit_8"/>
+    <widget class="QLineEdit" name="lineEdit_14"/>
    </item>
-   <item row="21" column="1">
-    <widget class="QLineEdit" name="lineEdit_15"/>
-   </item>
-   <item row="2" column="1">
-    <widget class="QLineEdit" name="lineEdit_2"/>
-   </item>
-   <item row="7" column="1">
-    <widget class="QLineEdit" name="lineEdit_5"/>
-   </item>
-   <item row="16" column="0">
-    <widget class="QLabel" name="label_10">
-     <property name="text">
-      <string>R</string>
+   <item row="15" column="1">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
     </widget>
    </item>
-   <item row="17" column="1">
+   <item row="10" column="1">
     <widget class="QLineEdit" name="lineEdit_11"/>
    </item>
-   <item row="11" column="0">
-    <widget class="QLabel" name="label_7">
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="lineEdit_3"/>
+   </item>
+   <item row="14" column="1">
+    <widget class="QLineEdit" name="lineEdit_15"/>
+   </item>
+   <item row="13" column="0">
+    <widget class="QLabel" name="label_14">
      <property name="text">
-      <string>C&lt;sub&gt;pmiГ&lt;/sub&gt;</string>
+      <string>H</string>
      </property>
     </widget>
+   </item>
+   <item row="12" column="1">
+    <widget class="QLineEdit" name="lineEdit_13"/>
    </item>
    <item row="1" column="0">
     <widget class="QLabel" name="label_3">
@@ -84,72 +53,36 @@
      </property>
     </widget>
    </item>
-   <item row="17" column="0">
+   <item row="10" column="0">
     <widget class="QLabel" name="label_11">
      <property name="text">
       <string>α</string>
      </property>
     </widget>
    </item>
-   <item row="18" column="0">
-    <widget class="QLabel" name="label_12">
+   <item row="11" column="2">
+    <widget class="QToolButton" name="toolButton_8">
      <property name="text">
-      <string>L&lt;sub&gt;0&lt;/sub&gt;</string>
+      <string>...</string>
      </property>
     </widget>
-   </item>
-   <item row="19" column="0">
-    <widget class="QLabel" name="label_13">
-     <property name="text">
-      <string>π</string>
-     </property>
-    </widget>
-   </item>
-   <item row="11" column="1">
-    <widget class="QLineEdit" name="lineEdit_7"/>
-   </item>
-   <item row="15" column="1">
-    <widget class="QLineEdit" name="lineEdit_9"/>
-   </item>
-   <item row="21" column="0">
-    <widget class="QLabel" name="label_15">
-     <property name="text">
-      <string>η</string>
-     </property>
-    </widget>
-   </item>
-   <item row="18" column="1">
-    <widget class="QLineEdit" name="lineEdit_12"/>
    </item>
    <item row="9" column="0">
-    <widget class="QLabel" name="label_6">
+    <widget class="QLabel" name="label_10">
      <property name="text">
-      <string>C&lt;sub&gt;pms(a=1)&lt;/sub&gt;</string>
+      <string>R</string>
      </property>
     </widget>
-   </item>
-   <item row="19" column="1">
-    <widget class="QLineEdit" name="lineEdit_13"/>
    </item>
    <item row="0" column="1">
     <widget class="QLineEdit" name="lineEdit"/>
    </item>
-   <item row="7" column="0">
-    <widget class="QLabel" name="label_5">
+   <item row="10" column="2">
+    <widget class="QToolButton" name="toolButton_7">
      <property name="text">
-      <string>C&lt;sub&gt;pmi(a=1)&lt;/sub&gt;</string>
+      <string>...</string>
      </property>
     </widget>
-   </item>
-   <item row="20" column="0">
-    <widget class="QLabel" name="label_14">
-     <property name="text">
-      <string>H</string>
-     </property>
-    </widget>
-   </item>
-   <item row="20" column="1">
-    <widget class="QLineEdit" name="lineEdit_14"/>
    </item>
    <item row="0" column="0">
     <widget class="QLabel" name="label_2">
@@ -158,180 +91,30 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="0">
-    <widget class="QLabel" name="label_4">
+   <item row="11" column="0">
+    <widget class="QLabel" name="label_12">
      <property name="text">
-      <string>C&lt;sub&gt;pmsB&lt;sub/&gt;</string>
+      <string>L&lt;sub&gt;0&lt;/sub&gt;</string>
      </property>
     </widget>
    </item>
    <item row="9" column="1">
-    <widget class="QLineEdit" name="lineEdit_6"/>
+    <widget class="QLineEdit" name="lineEdit_10"/>
    </item>
-   <item row="1" column="1">
-    <widget class="QLineEdit" name="lineEdit_3"/>
-   </item>
-   <item row="2" column="2">
-    <widget class="QPushButton" name="pushButton">
+   <item row="14" column="0">
+    <widget class="QLabel" name="label_15">
      <property name="text">
-      <string>PushButton</string>
+      <string>η</string>
      </property>
     </widget>
    </item>
-   <item row="5" column="2">
-    <widget class="QPushButton" name="pushButton_2">
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
+   <item row="11" column="1">
+    <widget class="QLineEdit" name="lineEdit_12"/>
    </item>
-   <item row="7" column="2">
-    <widget class="QPushButton" name="pushButton_3">
+   <item row="12" column="0">
+    <widget class="QLabel" name="label_13">
      <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
-   </item>
-   <item row="9" column="2">
-    <widget class="QPushButton" name="pushButton_4">
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
-   </item>
-   <item row="11" column="2">
-    <widget class="QPushButton" name="pushButton_5">
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
-   </item>
-   <item row="13" column="2">
-    <widget class="QPushButton" name="pushButton_6">
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="3">
-    <widget class="QToolButton" name="toolButton_3">
-     <property name="text">
-      <string>...</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="3">
-    <widget class="QToolButton" name="toolButton_2">
-     <property name="text">
-      <string>...</string>
-     </property>
-    </widget>
-   </item>
-   <item row="9" column="3">
-    <widget class="QToolButton" name="toolButton_4">
-     <property name="text">
-      <string>...</string>
-     </property>
-    </widget>
-   </item>
-   <item row="11" column="3">
-    <widget class="QToolButton" name="toolButton_5">
-     <property name="text">
-      <string>...</string>
-     </property>
-    </widget>
-   </item>
-   <item row="13" column="3">
-    <widget class="QToolButton" name="toolButton_6">
-     <property name="text">
-      <string>...</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="2">
-    <widget class="QPushButton" name="pushButton_7">
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="2">
-    <widget class="QPushButton" name="pushButton_8">
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
-   </item>
-   <item row="15" column="2">
-    <widget class="QPushButton" name="pushButton_9">
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
-   </item>
-   <item row="16" column="2">
-    <widget class="QPushButton" name="pushButton_10">
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
-   </item>
-   <item row="17" column="2">
-    <widget class="QPushButton" name="pushButton_11">
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
-   </item>
-   <item row="18" column="2">
-    <widget class="QPushButton" name="pushButton_12">
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
-   </item>
-   <item row="19" column="2">
-    <widget class="QPushButton" name="pushButton_13">
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
-   </item>
-   <item row="20" column="2">
-    <widget class="QPushButton" name="pushButton_14">
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
-   </item>
-   <item row="21" column="2">
-    <widget class="QPushButton" name="pushButton_15">
-     <property name="text">
-      <string>PushButton</string>
-     </property>
-    </widget>
-   </item>
-   <item row="17" column="3">
-    <widget class="QToolButton" name="toolButton_7">
-     <property name="text">
-      <string>...</string>
-     </property>
-    </widget>
-   </item>
-   <item row="18" column="3">
-    <widget class="QToolButton" name="toolButton_8">
-     <property name="text">
-      <string>...</string>
-     </property>
-    </widget>
-   </item>
-   <item row="22" column="1">
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      <string>π</string>
      </property>
     </widget>
    </item>

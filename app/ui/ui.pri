@@ -6,6 +6,7 @@ FORMS += \
     $$PWD/stoichiometricratiowindow.ui
 
 HEADERS += \
+    $$PWD/calculatorinterface.h \
     $$PWD/excessairratiowindow.h \
     $$PWD/heatcapacitywindow.h \
     $$PWD/heatingvaluewindow.h \
@@ -13,6 +14,7 @@ HEADERS += \
     $$PWD/stoichiometricratiowindow.h
 
 SOURCES += \
+    $$PWD/calculatorinterface.cpp \
     $$PWD/excessairratiowindow.cpp \
     $$PWD/heatcapacitywindow.cpp \
     $$PWD/heatingvaluewindow.cpp \

@@ -27,8 +27,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::onClick(int id)
 {
-    Calculator * calculator = CalculatorFactory::createCalculator(storage, (Calculators::Calculator)id);
-    double result = calculator->calculate();
+    DataStorage * storage = new DataStorage();
+    double result = CalculatorInterface::calculate((Calculators::Calculator)id, storage);
     ui->statusbar->showMessage(QString::number(result));
 }
 
