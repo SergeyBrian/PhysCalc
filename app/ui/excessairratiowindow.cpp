@@ -1,11 +1,12 @@
 #include "excessairratiowindow.h"
 #include "ui_excessairratiowindow.h"
 
-ExcessAirRatioWindow::ExcessAirRatioWindow(QWidget *parent) :
+ExcessAirRatioWindow::ExcessAirRatioWindow(DataStorage * storage, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::ExcessAirRatioWindow)
 {
     ui->setupUi(this);
+    this->storage_ = storage;
 }
 
 ExcessAirRatioWindow::~ExcessAirRatioWindow()

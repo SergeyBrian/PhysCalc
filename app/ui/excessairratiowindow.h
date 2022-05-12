@@ -4,6 +4,7 @@
 #include <QDialog>
 
 #include "../data/datastorage.h"
+#include "calculatorinterface.h"
 
 namespace Ui {
 class ExcessAirRatioWindow;
@@ -14,7 +15,7 @@ class ExcessAirRatioWindow : public QDialog
     Q_OBJECT
 
 public:
-    explicit ExcessAirRatioWindow(QWidget *parent = nullptr);
+    explicit ExcessAirRatioWindow(DataStorage * storage, QWidget *parent = nullptr);
     ~ExcessAirRatioWindow();
 
 private slots:
@@ -48,6 +49,8 @@ private:
     Ui::ExcessAirRatioWindow *ui;
     void openCalculator(Calculators::Calculator c);
     void loadTable(QString key);
+    DataStorage * storage_;
+
 };
 
 #endif // EXCESSAIRRATIOWINDOW_H

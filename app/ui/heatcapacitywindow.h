@@ -4,6 +4,7 @@
 #include <QDialog>
 
 #include "../data/datastorage.h"
+#include "calculatorinterface.h"
 
 namespace Ui {
 class HeatCapacityCalculatorWindow;
@@ -14,7 +15,7 @@ class HeatCapacityCalculatorWindow : public QDialog
     Q_OBJECT
 
 public:
-    explicit HeatCapacityCalculatorWindow(QWidget *parent = nullptr);
+    explicit HeatCapacityCalculatorWindow(DataStorage * storage, QWidget *parent = nullptr);
     ~HeatCapacityCalculatorWindow();
 
 private slots:
@@ -26,6 +27,7 @@ private:
     Ui::HeatCapacityCalculatorWindow *ui;
     void openCalculator(Calculators::Calculator c);
     void loadTable(QString filename);
+    DataStorage * storage_;
 };
 
 #endif // HEATCAPACITYCALCULATORWINDOW_H

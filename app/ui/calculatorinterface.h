@@ -13,7 +13,7 @@
 #include "../calculator/calculatorfactory.h"
 
 namespace DialogInterface {
-    QDialog * create(Calculators::Calculator calculator);
+    QDialog * create(Calculators::Calculator calculator, DataStorage * storage);
 }
 
 namespace CalculatorInterface {
