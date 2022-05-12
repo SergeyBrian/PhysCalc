@@ -3,6 +3,7 @@
 
 ExcessAirRatioCalculator::ExcessAirRatioCalculator(DataStorage * storage) : Calculator(storage)
 {
+    
 }
 
 double ExcessAirRatioCalculator::calculate()

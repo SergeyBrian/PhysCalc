@@ -6,8 +6,8 @@ HEADERS += \
     $$PWD/datastorageexception.h \
     $$PWD/duplicatekeyexception.h \
     $$PWD/keynotfoundexception.h \
-    $$PWD/nonetypecalculatorexception.h \
     $$PWD/valueconversionfailedexception.h \
+    $$PWD/nonetypecalculatorexception.h \
     $$PWD/variableexception.h \
     $$PWD/variableexceptions.h
 

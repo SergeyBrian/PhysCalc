@@ -6,20 +6,7 @@ namespace Calculators {
         NONE,
         HEATING_VALUE,
         HEAT_CAPACITY,
-        EXCESS_AIR_RATIO,
-        STOICHIOMETRIC_RATIO
-    };
-}
-
-namespace HeatingValueStates {
-    enum State {
-
-    };
-}
-
-namespace HeatCapacityStates {
-    enum State {
-
+        EXCESS_AIR_RATIO
     };
 }
 
