@@ -2,7 +2,7 @@ FORMS += \
     $$PWD/excessairratiowindow.ui \
     $$PWD/heatcapacitycalculatorwindow.ui \
     $$PWD/heatingvaluewindow.ui \
-        $$PWD/mainwindow.ui \ \
+    $$PWD/mainwindow.ui \
     $$PWD/stoichiometricratiowindow.ui
 
 HEADERS += \

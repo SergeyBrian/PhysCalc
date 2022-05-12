@@ -5,6 +5,11 @@
 #include <QButtonGroup>
 #include <QPushButton>
 
+#include "heatcapacitywindow.h"
+#include "heatingvaluewindow.h"
+#include "excessairratiowindow.h"
+#include "stoichiometricratiowindow.h"
+
 #include "../enums.h"
 #include "../data/datastorage.h"
 #include "../calculator/calculatorfactory.h"

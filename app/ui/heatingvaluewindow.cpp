@@ -13,7 +13,13 @@ HeatingValueWindow::~HeatingValueWindow()
     delete ui;
 }
 
+void HeatingValueWindow::loadTable(QString key) {
 
+}
+
+void HeatingValueWindow::openCalculator(Calculators::Calculator c) {
+
+}
 
 void HeatingValueWindow::on_toolButton_clicked()
 {

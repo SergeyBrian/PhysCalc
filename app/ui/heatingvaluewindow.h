@@ -39,7 +39,7 @@ private slots:
 private:
     Ui::HeatingValueWindow *ui;
     void openCalculator(Calculators::Calculator c);
-    void loadTable(QString filename);
+    void loadTable(QString key);
 };
 
 #endif // HEATINGVALUEWINDOW_H

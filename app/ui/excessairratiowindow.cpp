@@ -13,7 +13,13 @@ ExcessAirRatioWindow::~ExcessAirRatioWindow()
     delete ui;
 }
 
+void ExcessAirRatioWindow::openCalculator(Calculators::Calculator c) {
 
+}
+
+void ExcessAirRatioWindow::loadTable(QString key) {
+
+}
 
 void ExcessAirRatioWindow::on_toolButton_clicked()
 {

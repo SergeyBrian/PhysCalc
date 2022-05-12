@@ -28,7 +28,6 @@ MainWindow::~MainWindow()
 void MainWindow::onClick(int id)
 {
     Calculator * calculator = CalculatorFactory::createCalculator(storage, (Calculators::Calculator)id);
-    // TODO: Open second window, get variables from it
     double result = calculator->calculate();
     ui->statusbar->showMessage(QString::number(result));
 }

@@ -47,7 +47,7 @@ private slots:
 private:
     Ui::ExcessAirRatioWindow *ui;
     void openCalculator(Calculators::Calculator c);
-    void loadTable(QString filename);
+    void loadTable(QString key);
 };
 
 #endif // EXCESSAIRRATIOWINDOW_H
