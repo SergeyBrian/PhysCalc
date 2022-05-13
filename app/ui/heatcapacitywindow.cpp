@@ -1,5 +1,5 @@
 #include "heatcapacitywindow.h"
-#include "ui_heatcapacitycalculatorwindow.h"
+#include "ui_heatcapacitywindow.h"
 
 HeatCapacityCalculatorWindow::HeatCapacityCalculatorWindow(DataStorage * storage, QWidget *parent) :
     QDialog(parent),
@@ -14,24 +14,13 @@ HeatCapacityCalculatorWindow::~HeatCapacityCalculatorWindow()
     delete ui;
 }
 
-void HeatCapacityCalculatorWindow::openCalculator(Calculators::Calculator c)
-{
-    qDebug((char*)c);
-}
-
-void HeatCapacityCalculatorWindow::loadTable(QString filename)
-{
-
-}
-
-
 void HeatCapacityCalculatorWindow::on_toolButton_7_clicked()
 {
-    ui->lineEdit_11->setText(QString::number(CalculatorInterface::calculate(Calculators::EXCESS_AIR_RATIO, this->storage_)));
+    CalculatorInterface::getValueFromOtherCalculator(Calculators::EXCESS_AIR_RATIO, this->storage_, ui->lineEdit_11);
 }
 
 void HeatCapacityCalculatorWindow::on_toolButton_8_clicked()
 {
-    ui->lineEdit_12->setText(QString::number(CalculatorInterface::calculate(Calculators::HEATING_VALUE, this->storage_)));
+    CalculatorInterface::getValueFromOtherCalculator(Calculators::HEATING_VALUE, this->storage_, ui->lineEdit_12);
 }
 

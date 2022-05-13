@@ -29,8 +29,6 @@ private slots:
     void on_toolButton_5_clicked();
 private:
     Ui::ExcessAirRatioWindow *ui;
-    void openCalculator(Calculators::Calculator c);
-    void loadTable(QString key);
     DataStorage * storage_;
 
 };

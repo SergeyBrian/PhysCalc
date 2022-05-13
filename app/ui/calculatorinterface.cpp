@@ -1,6 +1,7 @@
 #include "calculatorinterface.h"
 
 #include "../exceptions/calculatorexceptions.h"
+#include "../exceptions/uiexceptions.h"
 
 QDialog * DialogInterface::create(Calculators::Calculator c, DataStorage * storage) {
     switch (c) {
@@ -26,6 +27,17 @@ double CalculatorInterface::calculate(Calculators::Calculator c, DataStorage *st
 {
     QDialog * dialog = DialogInterface::create(c, storage);
     Calculator * calculator = CalculatorFactory::createCalculator(storage, c);
-    dialog->exec();
+    if (!dialog->exec()) {
+        throw DialogCanceledException();
+    }
     return calculator->calculate();
+}
+
+void CalculatorInterface::getValueFromOtherCalculator(Calculators::Calculator c, DataStorage *storage, QLineEdit *targetField)
+{
+    try {
+        targetField->setText(QString::number(CalculatorInterface::calculate(c, storage)));
+    } catch (DialogCanceledException) {
+        qDebug("User canceled data receiving");
+    }
 }

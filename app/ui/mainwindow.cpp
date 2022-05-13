@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include "../exceptions/uiexceptions.h"
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -28,7 +30,11 @@ MainWindow::~MainWindow()
 void MainWindow::onClick(int id)
 {
     DataStorage * storage = new DataStorage();
-    double result = CalculatorInterface::calculate((Calculators::Calculator)id, storage);
-    ui->statusbar->showMessage(QString::number(result));
+    try {
+        double result = CalculatorInterface::calculate((Calculators::Calculator)id, storage);
+        ui->statusbar->showMessage(QString::number(result));
+    } catch (DialogCanceledException) {
+    }
+
 }
 

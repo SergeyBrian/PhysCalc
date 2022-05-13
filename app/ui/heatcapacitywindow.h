@@ -25,8 +25,6 @@ private slots:
 
 private:
     Ui::HeatCapacityCalculatorWindow *ui;
-    void openCalculator(Calculators::Calculator c);
-    void loadTable(QString filename);
     DataStorage * storage_;
 };
 

@@ -2,6 +2,7 @@
 #define CALCULATORINTERFACE_H
 
 #include <QDialog>
+#include <QLineEdit>
 
 #include "../enums.h"
 
@@ -18,6 +19,7 @@ namespace DialogInterface {
 
 namespace CalculatorInterface {
     double calculate(Calculators::Calculator c, DataStorage * storage);
+    void  getValueFromOtherCalculator(Calculators::Calculator c, DataStorage * storage, QLineEdit * targetField);
 }
 
 #endif // CALCULATORINTERFACE_H

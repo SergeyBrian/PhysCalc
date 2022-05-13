@@ -1,6 +1,6 @@
 FORMS += \
     $$PWD/excessairratiowindow.ui \
-    $$PWD/heatcapacitycalculatorwindow.ui \
+    $$PWD/heatcapacitywindow.ui \
     $$PWD/heatingvaluewindow.ui \
     $$PWD/mainwindow.ui \
     $$PWD/stoichiometricratiowindow.ui
