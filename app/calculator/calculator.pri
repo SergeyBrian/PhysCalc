@@ -5,7 +5,7 @@ HEADERS += \
     $$PWD/excessairratiocalculator.h \
     $$PWD/heatcapacitycalculator.h \
     $$PWD/heatingvaluecalculator.h \
-    $$PWD/stoichiometricratiocalculator.h
+    $$PWD/stoichiometricratiocalculator.h \
 
 SOURCES += \
     $$PWD/calculator.cpp \
@@ -13,4 +13,4 @@ SOURCES += \
     $$PWD/excessairratiocalculator.cpp \
     $$PWD/heatcapacitycalculator.cpp \
     $$PWD/heatingvaluecalculator.cpp \
-    $$PWD/stoichiometricratiocalculator.cpp
+    $$PWD/stoichiometricratiocalculator.cpp \

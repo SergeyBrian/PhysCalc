@@ -32,7 +32,7 @@ void HeatCapacityCalculator::T_rassh()
 
     }
     else{
-       storage->writeValue("T_e",($("T_b")-$("T_b")*(1-pow((3,14),( ($("R") )/(calculateC_pmsHelp()) ) )) )*($("E"))));
+       storage->writeValue("T_e",($("T_b")-$("T_b")*(1-pow((3,14),( ($("R") )/(calculateC_pmsHelp()) ) )) )*($("E")));
     }
     storage->writeValue("C_p_b",((($("H"))*($("E")))/(($("T_b"))-$("T_e"))));
 }
