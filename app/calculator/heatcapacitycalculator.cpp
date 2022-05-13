@@ -13,7 +13,7 @@ double HeatCapacityCalculator::calculate()
 
 void HeatCapacityCalculator::calculateC_pmi_p(QString key)
 {
-    storage->setValue(key, $(""))
+    storage->setValue(key, $(""));
 }
 
 void HeatCapacityCalculator::calculateByTemp(QString key)
