@@ -11,9 +11,11 @@ public:
     double calculate() override;
 
 private:
-    void calculateC_pmi_p(QString key = "C_pmi_p");
+    void calculateC_pmi(QString key = "C_pmi_p");
     void calculateByTemp(QString key = "C_p");
-
+    double calculateByTempHelp(QString key = "T");
+    double calculateC_pmsHelp();
+    void calculateC_pms(QString key = "C_pms");
 };
 
 
