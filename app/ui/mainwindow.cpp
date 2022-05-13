@@ -12,6 +12,10 @@ MainWindow::MainWindow(QWidget *parent)
     std::map<Calculators::Calculator, QString> buttons = {{Calculators::HEAT_CAPACITY, "Теплоёмкость"}, {Calculators::HEATING_VALUE, "Теплотворная способность"}, {Calculators::STOICHIOMETRIC_RATIO, "Стехиометрическое соотношение"}, {Calculators::EXCESS_AIR_RATIO, "Коэффицент избытка воздуха"}};
 
     this->storage = new DataStorage();
+    this->tableManager = new TableManager();
+
+    tableManager->openTable("air", "air.csv");
+    tableManager->openTable("fuel", "fuel.csv");
 
     for (auto const & button : buttons)
     {
