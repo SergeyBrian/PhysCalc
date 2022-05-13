@@ -42,6 +42,8 @@ public:
     std::vector<QString> getKeysByGroupId(int groupId);
 
     double operator[] (QString key);
+
+    friend class CalculatorWindow;
 private:
     int maxGroupId_;
     void addValue(QString key, Variable * value);

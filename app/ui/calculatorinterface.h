@@ -10,6 +10,7 @@
 #include "heatingvaluewindow.h"
 #include "excessairratiowindow.h"
 #include "stoichiometricratiowindow.h"
+#include "calculatorwindow.h"
 
 #include "../calculator/calculatorfactory.h"
 

@@ -1,4 +1,5 @@
 FORMS += \
+    $$PWD/calculatorwindow.ui \
     $$PWD/excessairratiowindow.ui \
     $$PWD/heatcapacitywindow.ui \
     $$PWD/heatingvaluewindow.ui \
@@ -7,6 +8,7 @@ FORMS += \
 
 HEADERS += \
     $$PWD/calculatorinterface.h \
+    $$PWD/calculatorwindow.h \
     $$PWD/excessairratiowindow.h \
     $$PWD/heatcapacitywindow.h \
     $$PWD/heatingvaluewindow.h \
@@ -15,6 +17,7 @@ HEADERS += \
 
 SOURCES += \
     $$PWD/calculatorinterface.cpp \
+    $$PWD/calculatorwindow.cpp \
     $$PWD/excessairratiowindow.cpp \
     $$PWD/heatcapacitywindow.cpp \
     $$PWD/heatingvaluewindow.cpp \
