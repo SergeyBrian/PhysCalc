@@ -3,6 +3,15 @@
 
 ExcessAirRatioCalculator::ExcessAirRatioCalculator(DataStorage * storage) : Calculator(storage)
 {
+    storage->addValue<double>("L_0", "L<sub>0</sub>", "Стехиометрическое отношение", Calculators::STOICHIOMETRIC_RATIO);
+    storage->addValue<double>("Q_l", "Q<sup>н</sup>", "Низшая теплота сгорания топлива", Calculators::HEATING_VALUE);
+    storage->addValue<double>("E", "η", "КПД процесса");
+    storage->addValue<double>("e_cc", "h<sub>топ</sub>", "Энтальпия топлива");
+    storage->addValue<double>("T_b", "T<sub>нач.</sub>", "Температура начала процесса");
+    storage->addValue<double>("T_e", "T<sub>кон.</sub>", "Температура конца процесса");
+    storage->addValue<double>("C_pmi_b", "C<sub>pmi(a=1)</sub>(T<sub>нач.</sub>)", "Теплоемкость продуктов сгорания в начале", Calculators::HEAT_CAPACITY);
+    storage->addValue<double>("C_pmi_e", "C<sub>pmВ</sub>(T<sub>кон.</sub>", "Теплоемкость в конце", Calculators::HEAT_CAPACITY);
+    storage->addValue<double>("C_pmi_b", "C<sub>pmВ</sub>(T<sub>нач.</sub>", "Теплоемкость в начале", Calculators::HEAT_CAPACITY);
 }
 
 double ExcessAirRatioCalculator::calculate()

@@ -6,7 +6,8 @@ namespace Calculators {
         NONE,
         HEATING_VALUE,
         HEAT_CAPACITY,
-        EXCESS_AIR_RATIO
+        EXCESS_AIR_RATIO,
+        STOICHIOMETRIC_RATIO
     };
 }
 
