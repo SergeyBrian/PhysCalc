@@ -29,6 +29,7 @@ private slots:
 private:
     Ui::CalculatorWindow *ui;
     DataStorage * storage_;
+    std::map<QString, QLineEdit *> lineEdits;
 };
 
 #endif // CALCULATORWINDOW_H

@@ -37,7 +37,6 @@ double CalculatorInterface::calculate(Calculators::Calculator c, DataStorage *st
 void CalculatorInterface::getValueFromOtherCalculator(Calculators::Calculator c, DataStorage *storage, QLineEdit *targetField)
 {
     try {
-        targetField->setText("flskdfjl");
         targetField->setText(QString::number(CalculatorInterface::calculate(c, storage)));
     } catch (DialogCanceledException) {
         qDebug("User canceled data receiving");

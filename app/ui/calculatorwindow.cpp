@@ -28,7 +28,9 @@ CalculatorWindow::CalculatorWindow(DataStorage * storage, QWidget *parent) :
         if (variable.second.first->calc() != Calculators::NONE) {
             QPushButton * button = new QPushButton("Вычислить");
             button->setProperty("calc", (int)variable.second.first->calc());
-            button->setProperty("field", lineEdit->objectName());
+            button->setProperty("key", variable.first);
+            this->lineEdits.insert({variable.first, lineEdit});
+            lineEdit->setObjectName(variable.first);
             connect(button, SIGNAL(clicked()), SLOT(onCalculatorRequest()));
             layout->addWidget(button);
         }
@@ -49,6 +51,7 @@ void CalculatorWindow::onLineEdit(QString text) {
 
 void CalculatorWindow::onCalculatorRequest() {
     Calculators::Calculator c = (Calculators::Calculator)sender()->property("calc").value<int>();
-    QLineEdit * field = this->findChild<QLineEdit *>(sender()->property("field").value<QString>());
+    QString key = sender()->property("key").value<QString>();
+    QLineEdit * field = this->lineEdits[key];
     CalculatorInterface::getValueFromOtherCalculator(c, storage_, field);
 }
