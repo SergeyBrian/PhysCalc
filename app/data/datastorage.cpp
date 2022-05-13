@@ -35,7 +35,7 @@ std::vector<QString> DataStorage::getKeysByGroupId(int groupId)
 void DataStorage::setGroupId(QString key, int groupId)
 {
     this->values[key].second = groupId;
-    this->values[key].first->setState(OPTIONAL);
+    this->values[key].first->setState(Variables::OPTIONAL);
 }
 
 double DataStorage::operator[] (QString key)
@@ -66,4 +66,13 @@ Variable *DataStorage::getValue(QString key)
         throw KeyNotFoundException(this, key);
     }
     return this->values[key].first;
+}
+
+std::vector<Variable *> DataStorage::getValues()
+{
+    std::vector<Variable *> result;
+    for (auto const & val : values) {
+        result.push_back(val.second.first);
+    }
+    return result;
 }
