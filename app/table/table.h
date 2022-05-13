@@ -21,8 +21,8 @@ public:
     std::vector<QVariant *> getColumn(int columnNumber = 0);
     std::vector<QVariant *> getRow(int rowNumber = 0);
 
-    std::vector<std::vector<QVariant *>> getMatrix(int beginColumn, int beginRow, int endColumn, int endRow);
-    std::vector<std::vector<QVariant *>> getMatrix();
+//    std::vector<std::vector<QVariant *>> getMatrix(int beginColumn, int beginRow, int endColumn, int endRow);
+//    std::vector<std::vector<QVariant *>> getMatrix();
 
     void writeColumn(std::vector<QVariant *> Column, int columnNumber = 0, int beginRow = 0);
     void writeRow(std::vector<QVariant *> Row, int rowNumber = 0, int beginColumn = 0);

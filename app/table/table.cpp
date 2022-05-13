@@ -34,7 +34,7 @@ std::vector<QVariant *> Table::parse(std::string line, char delimiter)
 std::vector<QVariant *> Table::getColumn(int columnNumber)
 {
     std::vector<QVariant *> output;
-    for(unsigned int i = 0; i <= lines.size(); i++)
+    for(unsigned int i = 0; i < lines.size(); i++)
         output.push_back(lines[i][columnNumber]);
 
     return output;
@@ -45,23 +45,23 @@ std::vector<QVariant *> Table::getRow(int rowNumber)
     return lines[rowNumber];
 }
 
-std::vector<std::vector<QVariant *> > Table::getMatrix(int beginColumn, int beginRow, int endColumn, int endRow)
-{
-    std::vector<std::vector<QVariant *>> output;
-    for(int i = beginRow; i <= endRow; i++)
-    {
-        for(int j = beginColumn; j <=  endColumn; j++)
-        {
-            output[i - beginRow].push_back(lines[i][j]);
-        }
-    }
-    return output;
-}
+//std::vector<std::vector<QVariant *> > Table::getMatrix(int beginColumn, int beginRow, int endColumn, int endRow)
+//{
+//    std::vector<std::vector<QVariant *>> output;
+//    for(int i = beginRow; i <= endRow; i++)
+//    {
+//        for(int j = beginColumn; j <=  endColumn; j++)
+//        {
+//            output[i - beginRow].push_back(lines[i][j]);
+//        }
+//    }
+//    return output;
+//}
 
-std::vector<std::vector<QVariant *> > Table::getMatrix()
-{
-    return lines;
-}
+//std::vector<std::vector<QVariant *> > Table::getMatrix()
+//{
+//    return lines;
+//}
 
 void Table::writeColumn(std::vector<QVariant *> Column, int columnNumber, int beginRow)
 {
