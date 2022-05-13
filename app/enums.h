@@ -11,16 +11,4 @@ namespace Calculators {
     };
 }
 
-namespace HeatingValueStates {
-    enum State {
-
-    };
-}
-
-namespace HeatCapacityStates {
-    enum State {
-
-    };
-}
-
 #endif // ENUMS_H
