@@ -17,6 +17,7 @@ namespace DialogInterface {
 namespace CalculatorInterface {
     double calculate(Calculators::Calculator c, DataStorage * storage);
     void  getValueFromOtherCalculator(Calculators::Calculator c, DataStorage * storage, QLineEdit * targetField);
+    std::vector<QString> getVariablesList(Calculators::Calculator c);
 }
 
 #endif // CALCULATORINTERFACE_H

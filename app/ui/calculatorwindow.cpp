@@ -15,6 +15,11 @@ CalculatorWindow::CalculatorWindow(Calculators::Calculator c, DataStorage * stor
             continue;
         }
 
+        auto v = CalculatorInterface::getVariablesList(calculator_);
+        if (std::find(v.begin(), v.end(), variable.first) == v.end()) {
+            continue;
+        }
+
         QHBoxLayout * layout = new QHBoxLayout();
 
         QLabel * label = new QLabel(variable.second.first->name());

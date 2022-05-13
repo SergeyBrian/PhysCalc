@@ -25,3 +25,32 @@ void CalculatorInterface::getValueFromOtherCalculator(Calculators::Calculator c,
         qDebug("User canceled data receiving");
     }
 }
+
+std::vector<QString> CalculatorInterface::getVariablesList(Calculators::Calculator c)
+{
+    std::vector<QString> list;
+    switch (c)
+    {
+    case Calculators::EXCESS_AIR_RATIO:
+        list = {
+            "Q_l", "L_0", "k_cc", "e_cc", "t", "C_pmi_A", "C_pmi"
+        };
+        break;
+    case Calculators::HEAT_CAPACITY:
+        list = {
+            "T", "R", "a", "L_0", "E_A", "H", "E"
+        };
+        break;
+    case Calculators::HEATING_VALUE:
+        list = {
+            "n", "L_0"
+        };
+        break;
+    case Calculators::STOICHIOMETRIC_RATIO:
+        list = {
+            "M"
+        };
+        break;
+    }
+    return list;
+}
