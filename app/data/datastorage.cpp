@@ -67,3 +67,12 @@ Variable *DataStorage::getValue(QString key)
     }
     return this->values[key].first;
 }
+
+std::vector<Variable *> DataStorage::getValues()
+{
+    std::vector<Variable *> result;
+    for (auto const & val : values) {
+        result.push_back(val.second.first);
+    }
+    return result;
+}
