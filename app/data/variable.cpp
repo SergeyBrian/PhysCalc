@@ -13,7 +13,7 @@ Variable::Variable(QString name, QString description, Calculators::Calculator so
 
 bool Variable::isEmpty()
 {
-    return !(this->value_->isNull());
+    return (this->value<QString>() == "");
 }
 
 void Variable::setState(Variables::VariableState state)

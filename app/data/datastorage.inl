@@ -5,6 +5,9 @@
 template<typename T>
 void DataStorage::addValue(QString key, QString name, QString description, Calculators::Calculator sourceCalculator) {
     Variable * var = new Variable(name, description, sourceCalculator);
+    if (this->hasKey(key)) {
+        return;
+    }
     this->addValue(key, var);
 }
 
