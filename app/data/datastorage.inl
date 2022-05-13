@@ -29,7 +29,7 @@ void DataStorage::writeValue(QString key, T value) {
         this->setValue(key, value);
     }
     else {
-        Variable * var = new Variable("", value, "");
+        Variable * var = new Variable(value, "", "");
         this->addValue(key, var);
     }
 }
