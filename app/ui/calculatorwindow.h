@@ -19,7 +19,7 @@ class CalculatorWindow : public QDialog
     Q_OBJECT
 
 public:
-    explicit CalculatorWindow(DataStorage * storage, QWidget *parent = nullptr);
+    explicit CalculatorWindow(Calculators::Calculator c, DataStorage * storage, QWidget *parent = nullptr);
     ~CalculatorWindow();
 
 private slots:
@@ -29,7 +29,8 @@ private slots:
 private:
     Ui::CalculatorWindow *ui;
     DataStorage * storage_;
-    std::map<QString, QLineEdit *> lineEdits;
+    std::map<QString, QLineEdit *> lineEdits_;
+    Calculators::Calculator calculator_;
 };
 
 #endif // CALCULATORWINDOW_H
