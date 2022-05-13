@@ -3,7 +3,7 @@
 #include "datastorage.h"
 
 template<typename T>
-void DataStorage::initValue(QString key, QString name, QString description, Calculators::Calculator sourceCalculator) {
+void DataStorage::addValue(QString key, QString name, QString description, Calculators::Calculator sourceCalculator) {
     Variable * var = new Variable(name, description, sourceCalculator);
     if (this->hasKey(key)) {
         return;
@@ -29,7 +29,8 @@ void DataStorage::writeValue(QString key, T value) {
         this->setValue(key, value);
     }
     else {
-        this->addValue(key, value);
+        Variable * var = new Variable("", value, "");
+        this->addValue(key, var);
     }
 }
 
