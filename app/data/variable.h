@@ -6,18 +6,20 @@
 #include <string>
 #include "../enums.h"
 
-enum VariableState {
-    REQUIRED,
-    CONST,
-    OPTIONAL
-};
+namespace Variables {
+    enum VariableState {
+        REQUIRED,
+        CONST,
+        OPTIONAL
+    };
+}
 
 class Variable
 {
 public:
     Variable(QString name, QString description, Calculators::Calculator sourceCalculator = Calculators::NONE);
     template<typename T>
-    Variable(T value, QString name, QString description, Calculators::Calculator sourceCalculator = Calculators::NONE, VariableState state = REQUIRED);
+    Variable(T value, QString name, QString description, Calculators::Calculator sourceCalculator = Calculators::NONE, Variables::VariableState state = Variables::REQUIRED);
 
     template<typename T>
     void value(T value);
@@ -25,20 +27,22 @@ public:
     template<typename T>
     T value();
 
-    void setState(VariableState state);
+    bool isEmpty();
+
+    void setState(Variables::VariableState state);
 
     QString type();
     QString name();
     QString desc();
     Calculators::Calculator calc();
-    VariableState state();
+    Variables::VariableState state();
 private:
     QVariant * value();
 
     QString name_;
     QString desc_;
     Calculators::Calculator calc_;
-    VariableState state_;
+    Variables::VariableState state_;
     QVariant * value_;
 
     void checkConst();
