@@ -24,6 +24,8 @@ CalculatorWindow::CalculatorWindow(Calculators::Calculator c, DataStorage * stor
 
         QLabel * label = new QLabel(variable.second.first->name());
         label->setToolTip(variable.second.first->desc());
+        QFont f("Arial", 15);
+        label->setFont(f);
         layout->addWidget(label);
 
         QLineEdit * lineEdit = new QLineEdit();

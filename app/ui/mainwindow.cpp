@@ -12,9 +12,6 @@ MainWindow::MainWindow(QWidget *parent)
     std::map<Calculators::Calculator, QString> buttons = {{Calculators::HEAT_CAPACITY, "Теплоёмкость"}, {Calculators::HEATING_VALUE, "Теплотворная способность"}, {Calculators::STOICHIOMETRIC_RATIO, "Стехиометрическое соотношение"}, {Calculators::EXCESS_AIR_RATIO, "Коэффицент избытка воздуха"}};
 
     this->storage = new DataStorage();
-    storage->addValue<int>("x", "name1", "desc1");
-    storage->addValue<int>("y", "name2", "desc2");
-    storage->addValue<int>("z", "name3", "desc3", Calculators::HEATING_VALUE);
 
     for (auto const & button : buttons)
     {

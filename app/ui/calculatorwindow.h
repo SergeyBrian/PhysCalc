@@ -6,6 +6,7 @@
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QPushButton>
+#include <QFont>
 
 #include "../data/datastorage.h"
 #include "calculatorinterface.h"

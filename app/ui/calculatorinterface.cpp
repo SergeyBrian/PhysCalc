@@ -9,8 +9,8 @@ QDialog * DialogInterface::create(Calculators::Calculator c, DataStorage * stora
 
 double CalculatorInterface::calculate(Calculators::Calculator c, DataStorage *storage)
 {
-    QDialog * dialog = DialogInterface::create(c, storage);
     Calculator * calculator = CalculatorFactory::createCalculator(storage, c);
+    QDialog * dialog = DialogInterface::create(c, storage);
     if (!dialog->exec()) {
         throw DialogCanceledException();
     }
@@ -33,7 +33,7 @@ std::vector<QString> CalculatorInterface::getVariablesList(Calculators::Calculat
     {
     case Calculators::EXCESS_AIR_RATIO:
         list = {
-            "Q_l", "L_0", "k_cc", "e_cc", "t", "C_pmi_A", "C_pmi"
+            "Q_l", "L_0", "k_cc", "e_cc", "T_b", "T_e", "C_pmi_b", "C_pms_A_b", "C_pms_A_e"
         };
         break;
     case Calculators::HEAT_CAPACITY:
