@@ -20,6 +20,7 @@ public:
     Variable(QString name, QString description, Calculators::Calculator sourceCalculator = Calculators::NONE);
     template<typename T>
     Variable(T value, QString name, QString description, Calculators::Calculator sourceCalculator = Calculators::NONE, Variables::VariableState state = Variables::REQUIRED);
+
     template<typename T>
     void value(T value);
 

@@ -28,6 +28,8 @@ public:
 
     Variable * getValue(QString key);
 
+    std::vector<Variable *> getValues();
+
     template<typename T>
     T getValue(QString key);
 

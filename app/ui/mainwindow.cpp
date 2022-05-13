@@ -37,4 +37,3 @@ void MainWindow::onClick(int id)
     }
 
 }
-
