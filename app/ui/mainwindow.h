@@ -30,5 +30,6 @@ public slots:
 private:
     Ui::MainWindow *ui;
     DataStorage * storage;
+    TableManager * tableManager;
 };
 #endif // MAINWINDOW_H
