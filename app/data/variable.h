@@ -13,6 +13,11 @@ namespace Variables {
         OPTIONAL
     };
 }
+enum VariableState {
+    REQUIRED,
+    CONST,
+    OPTIONAL
+};
 
 class Variable
 {
