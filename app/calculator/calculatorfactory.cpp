@@ -2,13 +2,21 @@
 
 #include "../exceptions/calculatorexceptions.h"
 
-Calculator * CalculatorFactory::createCalculator(DataStorage * storage) {
-    QString calculatorName = storage->getValue<QString>("CURRENT_CALCULATOR");
-    if (calculatorName == "HEAT_CAPACITY")
-        return new HeatCapacityCalculator(storage);
-    if (calculatorName == "HEATING_VALUE")
+Calculator * CalculatorFactory::createCalculator(DataStorage * storage, Calculators::Calculator type) {
+    switch (type) {
+    case Calculators::HEATING_VALUE:
         return new HeatingValueCalculator(storage);
-    if (calculatorName == "EXCESS_AIR_RATIO")
+        break;
+    case Calculators::HEAT_CAPACITY:
+        return new HeatCapacityCalculator(storage);
+        break;
+    case Calculators::EXCESS_AIR_RATIO:
         return new ExcessAirRatioCalculator(storage);
-    throw CalculatorNotFoundException(nullptr, calculatorName);
+        break;
+    case Calculators::STOICHIOMETRIC_RATIO:
+        return new StoichiometricRatioCalculator(storage);
+        break;
+    case Calculators::NONE:
+        throw NoneTypeCalculatorException();
+    }
 }

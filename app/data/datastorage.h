@@ -14,7 +14,7 @@ class DataStorage
 public:
     DataStorage();
     template<typename T>
-    void addValue(QString key, T value, QString name, QString description, VariableState state = REQUIRED,
+    void addValue(QString key, T value, QString name, QString description, Variables::VariableState state = Variables::REQUIRED,
                   Calculators::Calculator sourceCalculator = Calculators::NONE);
 
     template<typename T>
@@ -23,7 +23,12 @@ public:
     template<typename T>
     void setValue(QString key, T value);
 
+    template<typename T>
+    void writeValue(QString key, T value);
+
     Variable * getValue(QString key);
+
+    std::vector<Variable *> getValues();
 
     template<typename T>
     T getValue(QString key);
@@ -37,6 +42,8 @@ public:
     std::vector<QString> getKeysByGroupId(int groupId);
 
     double operator[] (QString key);
+
+    friend class CalculatorWindow;
 private:
     int maxGroupId_;
     void addValue(QString key, Variable * value);

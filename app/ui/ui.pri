@@ -1,8 +1,13 @@
 FORMS += \
-        $$PWD/mainwindow.ui \
+    $$PWD/calculatorwindow.ui \
+    $$PWD/mainwindow.ui \
 
 HEADERS += \
-    $$PWD/mainwindow.h
+    $$PWD/calculatorinterface.h \
+    $$PWD/calculatorwindow.h \
+    $$PWD/mainwindow.h \
 
 SOURCES += \
-    $$PWD/mainwindow.cpp
+    $$PWD/calculatorinterface.cpp \
+    $$PWD/calculatorwindow.cpp \
+    $$PWD/mainwindow.cpp \

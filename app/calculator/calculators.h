@@ -4,5 +4,6 @@
 #include "heatcapacitycalculator.h"
 #include "heatingvaluecalculator.h"
 #include "excessairratiocalculator.h"
+#include "stoichiometricratiocalculator.h"
 
 #endif // CALCULATORS_H
