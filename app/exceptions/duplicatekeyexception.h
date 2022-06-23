@@ -6,7 +6,7 @@
 class DuplicateKeyException : public DataStorageException
 {
 public:
-    DuplicateKeyException(DataStorage * storage, QString key);
+    DuplicateKeyException(QString key);
     QString what();
     QString key;
     static QString message;

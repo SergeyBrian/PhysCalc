@@ -6,10 +6,11 @@
 class KeyNotFoundException : public DataStorageException
 {
 public:
-    KeyNotFoundException(DataStorage * storage, QString key);
+    KeyNotFoundException(QString key);
     QString what();
+    QMap<QString, QString> details();
+private:
     QString key;
-    static QString message;
 };
 
 #endif // KEYNOTFOUNDEXCEPTION_H

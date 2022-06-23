@@ -6,9 +6,9 @@
 class DataStorageException
 {
 public:
-    DataStorageException(DataStorage * storage);
-    QString what();
-    DataStorage * storage;
+    DataStorageException();
+    virtual QString what();
+    virtual QMap<QString, QString> details();
 };
 
 #endif // DATASTORAGEEXCEPTION_H

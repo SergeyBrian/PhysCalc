@@ -3,76 +3,42 @@
 
 DataStorage::DataStorage()
 {
-    this->maxGroupId_ = 0;
 }
 
-void DataStorage::addValue(QString key, Variable *value)
+DataStorage::~DataStorage()
 {
-    if (this->hasKey(key)) {
-        throw DuplicateKeyException(this, key);
+    qDeleteAll(variables);
+    variables.clear();
+}
+
+void DataStorage::addVariable(QString key, double value)
+{
+    if (hasKey(key))
+    {
+        throw new DuplicateKeyException(key);
     }
-    this->values.insert({key, {value, this->maxGroupId_}});
-    this->maxGroupId_ ++;
+    variables[key] = value;
 }
 
-int DataStorage::getGroupId(QString key)
+void DataStorage::setVariableValue(QString key, double value)
 {
-    return this->values[key].second;
-}
-
-std::vector<QString> DataStorage::getKeysByGroupId(int groupId)
-{
-    std::vector<QString> keys;
-    for (auto & variable : values) {
-        int currentVariableGroupId = variable.second.second;
-        if (currentVariableGroupId == groupId) {
-            keys.push_back(variable.first);
-        }
+    if (hasKey(key))
+    {
+        throw new KeyNotFoundException(key);
     }
-    return keys;
+    variables[key] = value;
 }
 
-void DataStorage::setGroupId(QString key, int groupId)
+double DataStorage::getValue(QString key)
 {
-    this->values[key].second = groupId;
-    this->values[key].first->setState(Variables::OPTIONAL);
-}
-
-double DataStorage::operator[] (QString key)
-{
-    return this->getValue<double>(key);
+    if (!hasKey(key))
+    {
+        throw new KeyNotFoundException(key);
+    }
+    return variables[key];
 }
 
 bool DataStorage::hasKey(QString key)
 {
-    return this->values.find(key) != this->values.end();
-}
-
-void DataStorage::setVariablesReplaceable(std::vector<QString> keys)
-{
-    int groupId = -1;
-    for (auto & key : keys) {
-        if (groupId == -1) {
-            groupId = this->getGroupId(key);
-            continue;
-        }
-        this->setGroupId(key, groupId);
-    }
-}
-
-Variable *DataStorage::getValue(QString key)
-{
-    if (!this->hasKey(key)) {
-        throw KeyNotFoundException(this, key);
-    }
-    return this->values[key].first;
-}
-
-std::vector<Variable *> DataStorage::getValues()
-{
-    std::vector<Variable *> result;
-    for (auto const & val : values) {
-        result.push_back(val.second.first);
-    }
-    return result;
+    return variables.contains(key);
 }

@@ -1,13 +1,16 @@
 #include "duplicatekeyexception.h"
 
-QString DuplicateKeyException::message = "Value with given key already exsists";
-
-DuplicateKeyException::DuplicateKeyException(DataStorage * storage, QString key) : DataStorageException(storage)
+DuplicateKeyException::DuplicateKeyException(QString key) : DataStorageException()
 {
     this->key = key;
 }
 
 QString DuplicateKeyException::what()
 {
-    return this->message;
+    return "Value with given key already exsists";
+}
+
+QMap<QString, QString> DuplicateKeyException::details()
+{
+    return QMap<QString, QString> {{"key", key}};
 }

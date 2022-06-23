@@ -1,13 +1,16 @@
 #include "keynotfoundexception.h"
 
-QString KeyNotFoundException::message = "No value with given key was found";
-
-KeyNotFoundException::KeyNotFoundException(DataStorage * storage, QString key) : DataStorageException(storage)
+KeyNotFoundException::KeyNotFoundException(QString key)
 {
     this->key = key;
 }
 
 QString KeyNotFoundException::what()
 {
-    return this->message;
+    return "There is no value with given key";
+}
+
+QMap<QString, QString> KeyNotFoundException::details()
+{
+    return QMap<QString, QString> {{"key", key}};
 }
