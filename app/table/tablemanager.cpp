@@ -1,31 +1,26 @@
 #include "tablemanager.h"
 
-TableManager::TableManager()
-{
-
-}
-
 TableManager::~TableManager()
 {
-
+    qDeleteAll(tables);
+    tables.clear();
 }
 
-void TableManager::openTable(QString tablename, QString filename)
+Table * TableManager::openTable(QString tablename, QString filename)
 {
-
-}
-
-void TableManager::openTable(QString tablename)
-{
-
+    Table * table = new Table(filename);
+    tables.insert(tablename, table);
+    return table;
 }
 
 void TableManager::closeTable(QString tablename)
 {
-
+    Table * table = getTable(tablename);
+    tables.remove(tablename);
+    delete table;
 }
 
 Table *TableManager::getTable(QString tablename)
 {
-    return nullptr;
+    return tables[tablename];
 }
