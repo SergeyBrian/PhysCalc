@@ -10,27 +10,9 @@ class DataTest : public QObject
 {
     Q_OBJECT
 private slots:
-    void testAddValue();
-    void testDuplicateKeyException();
+    void testSetVariableValue();
     void testKeyNotFoundException();
     void testGetValue();
-
-    void testVariableValue();
-    void testVariableName();
-    void testVariableDesc();
-    void testVariableType();
-    void testVariableStringValue();
-    void testVariableWithSourceCalc();
-
-    void testGetterOperatorOverload();
-
-    void testConstVariable();
-    void testSetVariableValue();
-
-    void testNullInitializedVariable();
-
-    void testOptionalVariables();
-
 public:
     explicit DataTest(QObject *parent = nullptr);
 

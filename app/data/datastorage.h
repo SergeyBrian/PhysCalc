@@ -10,8 +10,7 @@ public:
     DataStorage();
     ~DataStorage();
 
-    void addVariable(QString key, double value);
-    void setVariableValue(QString key, double value);
+    void setValue(QString key, double value);
     double getValue(QString key);
 private:
     bool hasKey(QString key);

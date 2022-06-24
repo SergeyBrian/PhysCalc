@@ -8,8 +8,9 @@ class DuplicateKeyException : public DataStorageException
 public:
     DuplicateKeyException(QString key);
     QString what();
+    QMap<QString, QString> details();
+private:
     QString key;
-    static QString message;
 };
 
 

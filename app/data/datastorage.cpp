@@ -11,21 +11,8 @@ DataStorage::~DataStorage()
     variables.clear();
 }
 
-void DataStorage::addVariable(QString key, double value)
+void DataStorage::setValue(QString key, double value)
 {
-    if (hasKey(key))
-    {
-        throw new DuplicateKeyException(key);
-    }
-    variables[key] = value;
-}
-
-void DataStorage::setVariableValue(QString key, double value)
-{
-    if (hasKey(key))
-    {
-        throw new KeyNotFoundException(key);
-    }
     variables[key] = value;
 }
 

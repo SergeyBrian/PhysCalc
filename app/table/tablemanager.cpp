@@ -2,7 +2,6 @@
 
 TableManager::~TableManager()
 {
-    qDeleteAll(tables);
     tables.clear();
 }
 
@@ -15,9 +14,7 @@ Table * TableManager::openTable(QString tablename, QString filename)
 
 void TableManager::closeTable(QString tablename)
 {
-    Table * table = getTable(tablename);
     tables.remove(tablename);
-    delete table;
 }
 
 Table *TableManager::getTable(QString tablename)
